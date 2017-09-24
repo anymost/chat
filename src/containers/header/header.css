@@ -1,0 +1,23 @@
+.header-container .header{
+    color: black;
+    background-color: white;
+    box-shadow: black 5px 4px 4px;
+    border-bottom: none;
+}
+.header h1 {
+    float: left;
+}
+.header .avatar{
+    margin-top:-60px;
+    float:right;
+}
+
+.nav-list{
+    box-sizing: border-box;
+    width:60%;
+    margin-left:200px;
+    font-size: 14px;
+}
+.nav-list li{
+    line-height: 65px;
+}
