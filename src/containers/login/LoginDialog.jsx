@@ -47,7 +47,8 @@ class LoginDialog extends React.Component {
     };
 
     handleLoginFailed = () => {
-        this.props.loginInit();
+        const {loginInit: initLogin} = this.props;
+        initLogin();
     };
     render() {
         const {userLogin} = this.props;
@@ -55,7 +56,7 @@ class LoginDialog extends React.Component {
             <div className='login-container' />
             <Modal title="登陆失败"
                    visible={userLogin.loginState === 'failed'}
-                   onOK = {this.handleLoginFailed} onCancel={this.handleLoginFailed()}
+                   onOk = {this.handleLoginFailed} onCancel={this.handleLoginFailed}
             >由于网络错误，登陆失败</Modal>
             <div className='login-content'>
                 <img className='logo' src={require('../../static/images/logo.jpg')} alt='logo'/>
