@@ -6,8 +6,7 @@ import {loginSuccess, loginFailed} from "../actions/login"
 
 export default function userLogin(action$) {
     return action$.ofType(ActionTypes.LOGIN_START)
-            .mapTo(action => action.payload)
-            .switchMap(data => ajax.post(`${window.APIDOMAIN}/login`, data)
+            .switchMap(action => ajax.post(`${window.APIDOMAIN}/login`, action.payload, {})
                     .map(loginSuccess).catch(() => Observable.of(loginFailed()))
             );
 
