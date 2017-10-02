@@ -18,17 +18,9 @@ class LoginDialog extends React.Component {
     handleForm = (type, event) => {
         if (type === 'userName') {
             let userName = event.target.value;
-            if (!this.formValidate(userName)) {
-                message.info('用户名只能为大小写字母，数字，下划线');
-                return;
-            }
             this.setState({userName});
         } else if (type === 'password') {
             let password = event.target.value;
-            if (!this.formValidate(password)) {
-                message.info('密码只能为大小写字母，数字，下划线');
-                return;
-            }
             this.setState({password});
         }
     };
@@ -50,12 +42,11 @@ class LoginDialog extends React.Component {
         const {loginInit: initLogin} = this.props;
         initLogin();
     };
-    render() {
-        const {userLogin} = this.props;
+    loginWindow() {
+        const {userLogin: loginState} = this.props;
         return <div>
-            <div className='login-container' />
             <Modal title="登陆失败"
-                   visible={userLogin.loginState === 'failed'}
+                   visible={loginState === 'failed'}
                    onOk = {this.handleLoginFailed} onCancel={this.handleLoginFailed}
             >由于网络错误，登陆失败</Modal>
             <div className='login-content'>
@@ -73,6 +64,11 @@ class LoginDialog extends React.Component {
                 </form>
             </div>
         </div>;
+    }
+    render() {
+        const loginWindow = this.loginWindow();
+        const isWindowShow = this.props.userLogin.loginState !== 'success';
+        return isWindowShow && loginWindow;
     }
 }
 

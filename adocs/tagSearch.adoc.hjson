@@ -1,0 +1,72 @@
+{
+    title: tagSearch
+    tags: []
+    url: {
+        value: /tag/search
+        schema: ""
+        sampleUrl: ""
+    }
+    speedLimit: 0
+    response: {
+        body: {
+            type: json
+            value:
+                '''
+                {
+                    "code": 0,
+                    "message": "数据更新成功",
+                    "data": {
+                        "item": [
+                            {
+                                "tagId": 123,
+                                "tagName": "交易",
+                                "tableNum": 54
+                            },
+                            {
+                                "tagId": 113,
+                                "tagName": "流量",
+                                "tableNum": 33
+                            }
+                        ],
+                        "tn": 999,
+                        "cn": 1,
+                        "pn": 10,
+                        "sn": 30
+                    },
+                    "id": "http://json-schema.org/schema#"
+                }
+                '''
+            schema:
+                '''
+                {
+                    "code": 0,
+                    "message": "数据更新成功",
+                    "data": {
+                        "item":[
+                                {
+                                   "tagId":123,
+                                   "tagName":"交易",
+                                   "tableNum":54,
+                                },
+                                {
+                                   "tagId":113,
+                                   "tagName":"流量",
+                                   "tableNum":33,
+                                },
+                            ],
+                        "tn": 999,
+                        "cn": 1,
+                        "pn": 10,
+                        "sn": 30,
+                        }
+                }
+                '''
+            comment: ""
+            deepEqual: false
+        }
+    }
+    request: {
+        method: POST
+    }
+    version: 0.0.3
+}

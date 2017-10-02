@@ -1,0 +1,10 @@
+.main-wrap{
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    width: 800px;
+    margin-left: -400px;
+    height: 600px;
+    background-color: white;
+    z-index:1000;
+}

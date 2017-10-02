@@ -1,0 +1,94 @@
+{
+    title: childTags
+    tags: []
+    url: {
+        value: /tag/{int}/childtags
+        schema: ""
+        sampleUrl: ""
+    }
+    speedLimit: 0
+    response: {
+        body: {
+            type: json
+            value:
+                '''
+                {
+                    "code": 0,
+                    "message": "数据更新成功",
+                    "data": {
+                        "tagId": 12,
+                        "childTag": [
+                            {
+                                "id": 23,
+                                "name": "点评交易额",
+                                "creatorId": 44032,
+                                "createTime": "2017-09-01 12:00:00",
+                                "updateTime": "2017-09-01 12:00:03",
+                                "ownerId": 44032,
+                                "isRoot": 0,
+                                "isLeaf": 1
+                            },
+                            {
+                                "id": 25,
+                                "name": "美团交易额",
+                                "creatorId": 44032,
+                                "createTime": "2017-09-01 12:00:00",
+                                "updateTime": "2017-09-01 12:00:03",
+                                "ownerId": 44032,
+                                "isRoot": 0,
+                                "isLeaf": 1
+                            }
+                        ],
+                        "tn": 999,
+                        "cn": 1,
+                        "pn": 10,
+                        "sn": 100
+                    },
+                    "id": "http://json-schema.org/schema#"
+                }
+                '''
+            schema:
+                '''
+                {
+                 "code": 0,
+                 "message": "数据更新成功",
+                 "data": {
+                     "tagId":12,
+                     "childTag":[
+                         {
+                         "id":23,
+                         "name":"点评交易额",
+                         "creatorId":44032,
+                         "createTime":"2017-09-01 12:00:00",
+                         "updateTime":"2017-09-01 12:00:03",
+                         "ownerId":44032,
+                         "isRoot":0,
+                         "isLeaf":1,
+                         },
+                         {
+                         "id":25,
+                         "name":"美团交易额",
+                         "creatorId":44032,
+                         "createTime":"2017-09-01 12:00:00",
+                         "updateTime":"2017-09-01 12:00:03",
+                         "ownerId":44032,
+                         "isRoot":0,
+                         "isLeaf":1,
+                         }
+                    ],
+                    "tn": 999, //总条数
+                    "cn": 1, //当前页数
+                    "pn": 10, // 总页数
+                    "sn": 100, // 分页阈值
+                 }
+                }
+                '''
+            comment: ""
+            deepEqual: false
+        }
+    }
+    request: {
+        method: GET
+    }
+    version: 0.0.3
+}
