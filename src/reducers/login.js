@@ -1,17 +1,22 @@
 import * as ActionTypes from '../ActionType';
 
-export default function userLogin(state = {loginState: ActionTypes.LOGIN_INIT}, action) {
+const initState = {
+    loginState: ActionTypes.LOGIN_INIT,
+    message: ''
+};
+
+export default function userLogin(state = initState, action) {
     const type = action.type;
     switch(type) {
         case ActionTypes.LOGIN_INIT:
             return {loginState: 'init'};
         case ActionTypes.LOGIN_START:
-            return {loginState: 'start'};
+            return {loginState: 'start', message: action.message};
         case ActionTypes.LOGIN_SUCCESS:
-            return {loginState: 'success'};
+            return {loginState: 'success', message: action.message};
         case ActionTypes.LOGIN_FAILED:
-            return {loginState: 'failed'};
+            return {loginState: 'failed', message: action.message};
         default:
-            return {loginState: 'init'};
+            return state;
     }
 }

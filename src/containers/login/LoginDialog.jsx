@@ -1,12 +1,17 @@
 import React from 'react'
 import {Input, Button, message, Modal} from 'antd'
-import {startLogin, loginInit} from "../../actions/login"
+import {startLogin, loginInit, loginSuccess} from "../../actions/login";
 import {connect} from 'react-redux'
+import { liginVerify } from '../../tools/index';
 import './login.css'
 
 class LoginDialog extends React.Component {
     constructor(props) {
         super(props);
+
+        if (liginVerify()){
+            this.props.loginSuccess();
+        }
         this.state = {
             userName: '',
             password: ''
@@ -27,9 +32,8 @@ class LoginDialog extends React.Component {
 
     handleLogin = () => {
         const {userName, password} = this.state;
-        const {startLogin} = this.props;
         if (this.formValidate(userName) && this.formValidate(password)) {
-            startLogin({
+            this.props.startLogin({
                 userName,
                 password
             });
@@ -39,16 +43,14 @@ class LoginDialog extends React.Component {
     };
 
     handleLoginFailed = () => {
-        const {loginInit: initLogin} = this.props;
-        initLogin();
+        this.props.loginInit();
     };
     loginWindow() {
-        const {userLogin: loginState} = this.props;
         return <div>
             <Modal title="登陆失败"
-                   visible={loginState === 'failed'}
+                   visible={this.props.userLogin.loginState === 'failed'}
                    onOk = {this.handleLoginFailed} onCancel={this.handleLoginFailed}
-            >由于网络错误，登陆失败</Modal>
+            ><h4>{this.props.userLogin.message}</h4></Modal>
             <div className='login-content'>
                 <img className='logo' src={require('../../static/images/logo.jpg')} alt='logo'/>
                 <form>
@@ -72,4 +74,5 @@ class LoginDialog extends React.Component {
     }
 }
 
-export default connect(({userLogin}) => ({userLogin}), {startLogin, loginInit})(LoginDialog);
+export default connect(({userLogin}) => ({userLogin}),
+        {startLogin, loginInit, loginSuccess})(LoginDialog);
