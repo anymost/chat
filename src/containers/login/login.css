@@ -22,5 +22,17 @@
 }
 
 div.form-item{
-    margin: 0 10px 30px 10px;
+    margin: 20px 10px 30px 10px;
+}
+
+div .login-btn{
+    color:  #3dd5b0;
+    border-color:  #3dd5b0;
+    background-color: white;
+    margin-top: 20px;
+
+}
+div .registry-btn{
+    margin: 20px -200px 0 0;
+    border: none;
 }
