@@ -2,7 +2,7 @@ import {Observable} from 'rxjs'
 import {ajax} from 'rxjs/observable/dom/ajax'
 import * as ActionTypes from '../ActionType'
 import {registrySuccess, registryFailed} from "../actions/registry"
-
+import {saveUserInfo} from "../tools/index"
 
 
 export default function userRegistry(action$) {
@@ -11,7 +11,7 @@ export default function userRegistry(action$) {
                     .map(data => data.response)
                     .map(data => {
                         if(data.code === 200){
-                            localStorage.setItem('id', data.data.id);
+                            saveUserInfo(data);
                             return registrySuccess();
                         } else {
                             return registryFailed(data.message);

@@ -4,7 +4,40 @@
     left: 50%;
     width: 800px;
     margin-left: -400px;
-    height: 600px;
+    height: 650px;
     background-color: white;
     z-index:1000;
+    border-radius: 6px;
+}
+
+.let-nav-wrap{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    background-color: rgb(38, 38, 38);
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.avatar{
+    margin: 50px 13%;
+    border-radius: 4px;
+}
+
+.icon-item{
+    width: 60px;
+    height: 80px;
+    font-size: 26px;
+
+    cursor: pointer;
+    margin-left: 10px;
+}
+.icon-item a{
+    color: rgb(81, 81, 81);
+}
+
+.active-color{
+    color: rgb(31, 185,34);
 }

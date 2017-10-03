@@ -1,7 +1,7 @@
 import React from 'react';
-import './chatList.css';
+import './setting.css';
 
-class Main extends React.component {
+class Setting extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -11,4 +11,4 @@ class Main extends React.component {
     }
 }
 
-export default Main;
+export default Setting;

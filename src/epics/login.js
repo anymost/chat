@@ -2,6 +2,7 @@ import {Observable} from 'rxjs'
 import {ajax} from 'rxjs/observable/dom/ajax'
 import * as ActionTypes from '../ActionType'
 import {loginSuccess, loginFailed} from "../actions/login"
+import {saveUserInfo} from "../tools/index"
 
 
 
@@ -11,7 +12,7 @@ export default function userLogin(action$) {
                     .map(data => data.response)
                     .map(data => {
                         if(data.code === 200){
-                            localStorage.setItem('id', data.data.id);
+                            saveUserInfo(data);
                             return loginSuccess();
                         } else {
                             return loginFailed(data.message);

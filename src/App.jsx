@@ -5,6 +5,10 @@ import store from './configureStore';
 import LoginDialog from './containers/login/LoginDialog';
 import BgContainer from './containers/bgContainer/BgContainer';
 import MainWindow from './page/mainWindow/MainWindow';
+import Chat from './page/chat/Chat';
+import List from './page/list/List';
+import Setting from './page/setting/Setting';
+
 import './App.css';
 
 
@@ -14,7 +18,9 @@ class App extends React.Component {
       <div className="App">
           <BgContainer/>
           <LoginDialog/>
-          <div>{this.props.children}</div>
+          <MainWindow>
+              {this.props.children}
+          </MainWindow>
       </div>
     );
   }
@@ -24,7 +30,9 @@ const Root = () => (
     <Provider store={store}>
         <Router history={browserHistory}>
             <Route path='/' component={App}>
-                <IndexRoute component={MainWindow}/>
+                    <IndexRoute component={Chat}/>
+                    <Route path="list" component={List}/>
+                    <Route path="setting" component={Setting}/>
             </Route>
         </Router>
     </Provider>
