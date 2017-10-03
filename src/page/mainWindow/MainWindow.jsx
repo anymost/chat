@@ -7,7 +7,9 @@ class ChatWindow extends React.Component{
         super(props);
     }
     mainWindow() {
-        return <div className="main-wrap">chat window</div>
+        return <div className="main-wrap">
+            <LeftNavBar/>
+        </div>
     }
     render() {
         const isWindowShow = this.props.userLogin.loginState === 'success'
