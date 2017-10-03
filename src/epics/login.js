@@ -10,7 +10,7 @@ export default function userLogin(action$) {
             .switchMap(action => ajax.post(`${window.APIDOMAIN}/login`, action.payload)
                     .map(data => data.response)
                     .map(data => {
-                        if(data.result === 200){
+                        if(data.code === 200){
                             localStorage.setItem('id', data.data.id);
                             return loginSuccess();
                         } else {

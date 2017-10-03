@@ -1,11 +1,13 @@
 
 import {combineEpics} from 'redux-observable'
 import userLogin from './login'
+import userRegistry from './registry'
 
 
 
 const rootEpic = combineEpics(
-        userLogin
+        userLogin,
+        userRegistry
 );
 
 

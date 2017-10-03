@@ -1,7 +1,7 @@
 import * as ActionTypes from '../ActionType';
 
 const initState = {
-    loginState: ActionTypes.LOGIN_INIT,
+    loginState: 'init',
     message: ''
 };
 

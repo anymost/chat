@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Button, message, Modal, Upload, Icon} from 'antd';
 import {startLogin, loginInit, loginSuccess} from "../../actions/login";
+import {startRegistry, registrySuccess, registryInit} from "../../actions/registry";
 import LoginInputGroup from '../../component/login/LoginInputGroup';
 import RegistryInputGroup from '../../component/login/RegistryInputGroup';
 import {liginVerify} from '../../tools/index';
@@ -87,11 +88,15 @@ class LoginDialog extends React.Component {
                 password,
                 email,
                 phone,
-                fileName
+                avatar: fileName
             });
         } else {
             message.info('登陆信息不合法');
         }
+    };
+
+    handleRegistryFailed = () => {
+        this.props.registryInit();
     };
 
     loginWindow() {
@@ -100,6 +105,10 @@ class LoginDialog extends React.Component {
             <Modal title="登陆失败" visible={this.props.userLogin.loginState === 'failed'}
                    onOk={this.handleLoginFailed} onCancel={this.handleLoginFailed}>
                 <h4>{this.props.userLogin.message}</h4>
+            </Modal>
+            <Modal title="注册" visible={this.props.userRegistry.registryState === 'failed'}
+                   onOk={this.handleRegistryFailed} onCancel={this.handleRegistryFailed}>
+                <h4>{this.props.userRegistry.message}</h4>
             </Modal>
             <div className='login-content'>
                 {type === 'login' &&
@@ -141,10 +150,11 @@ class LoginDialog extends React.Component {
 
     render() {
         const loginWindow = this.loginWindow();
-        const isWindowShow = this.props.userLogin.loginState !== 'success';
+        const isWindowShow = this.props.userLogin.loginState !== 'success'
+                && this.props.userRegistry.registryState !== 'success';
         return isWindowShow && loginWindow;
     }
 }
 
-export default connect(({userLogin}) => ({userLogin}),
-        {startLogin, loginInit, loginSuccess})(LoginDialog);
+export default connect(({userLogin, userRegistry}) => ({userLogin, userRegistry}),
+        {startLogin, loginInit, loginSuccess, startRegistry, registryInit, registrySuccess})(LoginDialog);

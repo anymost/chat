@@ -10,9 +10,10 @@ class ChatWindow extends React.Component{
         return <div className="main-wrap">chat window</div>
     }
     render() {
-        const isWindowShow = this.props.userLogin.loginState === 'success';
+        const isWindowShow = this.props.userLogin.loginState === 'success'
+                || this.props.userRegistry.registryState === 'success';
         return isWindowShow && this.mainWindow();
     }
 }
 
-export default connect(({userLogin}) => ({userLogin}))(ChatWindow);
+export default connect(({userLogin, userRegistry}) => ({userLogin, userRegistry}))(ChatWindow);

@@ -10,4 +10,6 @@ export const REGISTRY_INIT = 'registry_init';
 
 export const REGISTRY_START = 'registry_start';
 
-export const
+export const REGISTRY_SUCCESS = 'registry_success';
+
+export const REGISTRY_FAILED = 'registry_failed';

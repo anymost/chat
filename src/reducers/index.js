@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux';
-import userLogin from './login'
+import userLogin from './login';
+import userRegistry from './registry';
 
 
 const reducers = combineReducers({
-    userLogin
+    userLogin,
+    userRegistry
 });
 
 export default reducers;
