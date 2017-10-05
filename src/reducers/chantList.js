@@ -20,6 +20,6 @@ export default function chatList(state = {}, action) {
                 data
             };
         default:
-            return {};
+            return state;
     }
 }

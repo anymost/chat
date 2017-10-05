@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import SearchComp from '../../component/main/SearchComp';
 import {getUserInfo} from "../../tools/index";
 import {chatListStart} from "../../actions/chatList";
+import {showChatWindow} from '../../actions/chatWindow';
 import {timeTransformer} from "../../tools/index";
 import './chatlist.css';
 
@@ -11,18 +12,34 @@ class ChatList  extends React.Component {
         super(props);
         const {id} = getUserInfo();
         this.state = {
-            id
+            id,
+            defaultIndex: 0
         };
         this.props.chatListStart({id});
     }
 
+    chooseChat = (index, item) => {
+        this.setState({
+            defaultIndex: index
+        });
+        this.props.showChatWindow(item);
+
+    };
+    componentDidUpdate() {
+        const {chatList: {data}} = this.props;
+        if (data && data.length > 0) {
+            this.props.showChatWindow(data[0]);
+        }
+    }
     render() {
         let  {chatListState, data: data = []} = this.props.chatList;
         let chatList = [];
         if (chatListState === 'success'){
-            chatList = data.map(item => {
-                return <li className="chat-list-item" key={item.sender}>
-                    <img src={item.avatar} className="list-avatar" alt=""/>
+            chatList = data.map((item, index) => {
+                return <li onClick={this.chooseChat.bind(this, index, item)}  key={item.sender}
+                           className={this.state.defaultIndex === index ?
+                                   "chat-list-item active-list-item" : "chat-list-item"}>
+                    <img src={item.avatar} className="list-avatar" alt="avatar"/>
                     <div>
                         <h3>{item.name}</h3>
                         <p>{item.data[0].message}</p>
@@ -41,4 +58,4 @@ class ChatList  extends React.Component {
     }
 }
 
-export default connect(({chatList})=>({chatList}), {chatListStart})(ChatList);
+export default connect(({chatList})=>({chatList}), {chatListStart, showChatWindow})(ChatList);

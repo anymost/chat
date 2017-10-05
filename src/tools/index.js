@@ -28,8 +28,6 @@ export const timeTransformer = time => {
     const date = new Date(time);
     const now = new Date();
     let reg = null;
-    console.log(date.valueOf());
-    console.log(now.valueOf());
     if (date.valueOf() + 1000 * 60 * 60 * 24 > now.valueOf()) {
         reg =  /.+T(\d{2}:\d{2})/
     } else {

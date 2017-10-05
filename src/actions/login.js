@@ -1,15 +1,14 @@
-import * as ActionType from '../ActionType' ;
-
+import {LOGIN_INIT, LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILED} from "../ActionType"
 export function loginInit() {
     return {
-        type: ActionType.LOGIN_INIT,
+        type: LOGIN_INIT,
         message: ''
     }
 }
 
 export function startLogin(data) {
     return {
-        type: ActionType.LOGIN_START,
+        type: LOGIN_START,
         message: '登录中',
         payload: data
     }
@@ -17,14 +16,14 @@ export function startLogin(data) {
 
 export function loginSuccess() {
     return {
-        type: ActionType.LOGIN_SUCCESS,
+        type: LOGIN_SUCCESS,
         message: '登陆成功'
     }
 }
 
 export function loginFailed(message) {
     return {
-        type: ActionType.LOGIN_FAILED,
+        type: LOGIN_FAILED,
         message
     }
 }
