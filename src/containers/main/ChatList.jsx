@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import SearchComp from '../../component/main/SearchComp';
-import {getUserInfo, liginVerify} from "../../tools/index";
+import {getUserInfo} from "../../tools/index";
 import {chatListStart} from "../../actions/chatList";
-import {toString} from "../../tools/index";
+import {timeTransformer} from "../../tools/index";
 import './chatlist.css';
 
 class ChatList  extends React.Component {
@@ -17,17 +17,25 @@ class ChatList  extends React.Component {
     }
 
     render() {
-        const {chatListState, data} = this.props.chatList;
-        let array = [];
-        if (toString(data) === '[object Array]' && chatListState === 'success'){
-            array = data.map(item => {
-                return <li>hello</li>
+        let  {chatListState, data: data = []} = this.props.chatList;
+        let chatList = [];
+        if (chatListState === 'success'){
+            chatList = data.map(item => {
+                return <li className="chat-list-item" key={item.sender}>
+                    <img src={item.avatar} className="list-avatar" alt=""/>
+                    <div>
+                        <h3>{item.name}</h3>
+                        <p>{item.data[0].message}</p>
+                    </div>
+                    <span>{timeTransformer(item.data[0].date)}</span>
+
+                </li>
             })
         }
         return <div className="chat-list-wrap">
             <SearchComp/>
             <ul className="chat-list-ul">
-                {array}
+                {chatList}
             </ul>
         </div>;
     }

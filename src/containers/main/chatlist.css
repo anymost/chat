@@ -1,9 +1,10 @@
 .chat-list-wrap{
-    width: 200px;
+    width: 250px;
     position: absolute;
     left: 80px;
     top: 0;
     bottom: 0;
+    border-right: 1px solid rgb(239, 239, 239);
 }
 
 .chat-list-ul{
@@ -13,5 +14,38 @@
     bottom: 0;
     width: 100%;
     overflow-y: auto;
-    background-color: darkcyan;
+}
+
+.chat-list-item{
+    padding: 5px 5px;
+    height: 70px;
+    border-bottom: 1px solid rgb(239, 239, 239);
+    color: rgb(209, 209, 209);
+    font-weight: 300;
+}
+
+.chat-list-item > img{
+    width: 50px;
+    height: 55px;
+    float: left;
+    margin: 0 5px;
+    border-radius: 6px;
+}
+.chat-list-item > div{
+    float: left;
+}
+
+.chat-list-item > span{
+    float: right;
+}
+
+.chat-list-item  h3{
+    text-align: left;
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+}
+.chat-list-item  p{
+    margin-top: 10px;
+    font-size: 14px;
 }

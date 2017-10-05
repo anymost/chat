@@ -6,7 +6,7 @@ import {chatListSuccess, chantListFailed} from "../actions/chatList"
 
 
 
-export default function userLogin(action$) {
+export default function chatList(action$) {
     return action$.ofType(ActionTypes.CHAT_LIST_START)
             .switchMap(action => ajax.get(`${window.APIDOMAIN}/chatList/${action.data}`)
                     .map(data => data.response)

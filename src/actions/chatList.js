@@ -9,7 +9,7 @@ export function chatListStart(payload) {
 
 export function chatListSuccess(payload) {
     return {
-        type: ActionTypes.CHAT_LIST_START,
+        type: ActionTypes.CHAT_LIST_SUCCESS,
         data: payload
     }
 }
