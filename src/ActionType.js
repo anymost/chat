@@ -21,3 +21,9 @@ export const CHAT_LIST_SUCCESS = 'chat_list_success';
 export const CHAT_LIST_FAILED = 'chat_list_failed';
 
 export const SHOW_CHAT_WINDOW = 'show_chat_window';
+
+export const SEND_MESSAGE_START = 'send_message_start';
+
+export const SEND_MESSAGE_SUCCESS = 'send_message_success';
+
+export const SEND_MESSAGE_FAILED = 'send_message_failed';

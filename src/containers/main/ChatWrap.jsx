@@ -39,7 +39,7 @@ class ChatWrap extends React.Component{
                         {this.chatList(chatWindow)}
                     </ul>
                 </div>
-            <SendMessage/>
+            <SendMessage receiver={chatWindow.data.sender}/>
         </div>;
     }
 }
