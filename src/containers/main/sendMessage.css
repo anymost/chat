@@ -1,0 +1,21 @@
+.send-wrap{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 170px;
+    border-top: 1px solid rgb(226, 226, 226);
+}
+
+.input-content{
+    border: none;
+    width: 100%;
+    height: 130px;
+    border-bottom-right-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    background-color: rgb(243, 243, 243);
+}
+
+.input-content:focus{
+    border: none;
+}

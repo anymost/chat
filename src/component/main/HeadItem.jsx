@@ -3,7 +3,7 @@ import './headItem.css';
 
 function HeadItem(props) {
     return <div className="head-item-wrap">
-        <h4>{props.name}</h4>
+        <h2>{props.name}</h2>
     </div>
 }
 

@@ -15,6 +15,7 @@ class ChatList  extends React.Component {
             id,
             defaultIndex: 0
         };
+        this.firstTime = true;
         this.props.chatListStart({id});
     }
 
@@ -26,8 +27,10 @@ class ChatList  extends React.Component {
 
     };
     componentDidUpdate() {
+        // todo fix the first load data show
         const {chatList: {data}} = this.props;
-        if (data && data.length > 0) {
+        if (this.firstTime &&data && data.length > 0) {
+            this.firstTime = false;
             this.props.showChatWindow(data[0]);
         }
     }
@@ -51,6 +54,7 @@ class ChatList  extends React.Component {
         }
         return <div className="chat-list-wrap">
             <SearchComp/>
+
             <ul className="chat-list-ul">
                 {chatList}
             </ul>

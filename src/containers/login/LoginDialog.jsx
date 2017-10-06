@@ -82,7 +82,7 @@ class LoginDialog extends React.Component {
 
     handleRegistry = () => {
         const {userName, password, email, phone, fileName} = this.state;
-        if (this.formValidate(userName) && this.formValidate(password)) {
+        if (this.formValidate(password)) {
             this.props.startRegistry({
                 userName,
                 password,

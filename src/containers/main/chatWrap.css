@@ -4,4 +4,65 @@
     left:330px;
     bottom: 0;
     width: 470px;
+    background-color: rgb(243, 243, 243);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.main-content-wrap{
+    width: 100%;
+    height: 430px;
+}
+
+.chat-item{
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.chat-item:after{
+    display: block;
+    visibility: hidden;
+    content: '';
+    clear: both;
+}
+
+.chat-item img{
+    width: 35px;
+    height: 30px;
+    border-radius: 4px;
+}
+
+.chat-item span{
+    position: absolute;
+    display: inline-block;
+    border-radius: 4px;
+    top: 0;
+    padding: 6px 8px;
+}
+
+
+.left-item img{
+    float: left;
+}
+
+.left-item span{
+    position: absolute;
+    left: 40px;
+    background-color: #ffffff;
+    margin-left: 10px;
+}
+
+.right-item img{
+    float: right;
+}
+
+.right-item span{
+    position: absolute;
+    right: 40px;
+    background-color: rgb(161, 231, 90);
+    margin-right: 10px;
 }
