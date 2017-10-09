@@ -6,6 +6,7 @@ import {startRegistry, registrySuccess, registryInit} from "../../actions/regist
 import LoginInputGroup from '../../component/login/LoginInputGroup';
 import RegistryInputGroup from '../../component/login/RegistryInputGroup';
 import {liginVerify} from '../../tools/index';
+import {mapLoginProps} from "../../selector/main";
 import './login.css';
 
 class LoginDialog extends React.Component {
@@ -156,5 +157,7 @@ class LoginDialog extends React.Component {
     }
 }
 
-export default connect(({userLogin, userRegistry}) => ({userLogin, userRegistry}),
-        {startLogin, loginInit, loginSuccess, startRegistry, registryInit, registrySuccess})(LoginDialog);
+export default connect((
+        {userLogin, userRegistry}) => ({userLogin: mapLoginProps(userLogin), userRegistry}),
+        {startLogin, loginInit, loginSuccess, startRegistry, registryInit, registrySuccess}
+        )(LoginDialog);

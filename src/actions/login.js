@@ -14,10 +14,11 @@ export function startLogin(data) {
     }
 }
 
-export function loginSuccess() {
+export function loginSuccess(data) {
     return {
         type: LOGIN_SUCCESS,
-        message: '登陆成功'
+        message: '登陆成功',
+        data
     }
 }
 

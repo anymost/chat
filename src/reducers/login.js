@@ -2,7 +2,8 @@ import * as ActionTypes from '../ActionType';
 
 const initState = {
     loginState: 'init',
-    message: ''
+    message: '',
+    data: null
 };
 
 export default function userLogin(state = initState, action) {
@@ -13,7 +14,7 @@ export default function userLogin(state = initState, action) {
         case ActionTypes.LOGIN_START:
             return {loginState: 'start', message: action.message};
         case ActionTypes.LOGIN_SUCCESS:
-            return {loginState: 'success', message: action.message};
+            return {loginState: 'success', message: action.message, data: action.data};
         case ActionTypes.LOGIN_FAILED:
             return {loginState: 'failed', message: action.message};
         default:
