@@ -3,37 +3,33 @@ import {connect} from 'react-redux';
 import {mapChatList} from '../../selector/main';
 import SendMessage from './SendMessage';
 import HeadItem from '../../component/main/HeadItem';
+import MessageItem from '../../component/chat/MessageItem';
 import './chatWrap.css';
 
 class ChatWrap extends React.Component{
-    chatList(chatWindow) {
-        if (chatWindow.data) {
-            const message = chatWindow.data.message;
-            return message.map((item, index) => {
-                if (item.type === 'sender') {
-                    return <li key={index} className="left-item chat-item">
-                        <img src={item.avatar} alt="avatar"/>
-                        <span>{item.message}</span>
-                    </li>;
-                }
-                return <li key={index} className="right-item chat-item">
-                    <img src={item.avatar} alt="avatar"/>
-                    <span>{item.message}</span>
-                </li>;
-
-            });
-        }
-        return null;
-    }
     render() {
         const {chatWindow} = this.props;
         return <div className="chat-wrap">
             <HeadItem name={chatWindow.data ? chatWindow.data.name : null}/>
             <div className="main-content-wrap">
-                <ul>{this.chatList(chatWindow)}</ul>
+                <ul ref={list => this.list = list}>
+                    {
+                        chatWindow.data &&
+                        chatWindow.data.message &&
+                        chatWindow.data.message.map((item, index) => {
+                            return <MessageItem key={index} message={item}/>;
+                        })
+                    }
+                </ul>
             </div>
             <SendMessage receiver={chatWindow.data.sender}/>
         </div>;
+    }
+    componentDidMount() {
+        document.documentElement.scrollTop = '200px';
+    }
+    componentDidUpdate() {
+        document.documentElement.scrollTop = this.list.style.height;
     }
 }
 
