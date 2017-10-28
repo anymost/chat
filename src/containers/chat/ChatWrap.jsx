@@ -12,14 +12,14 @@ class ChatWrap extends React.Component{
             return message.map((item, index) => {
                 if (item.type === 'sender') {
                     return <li key={index} className="left-item chat-item">
-                            <img src={item.avatar} alt="avatar"/>
-                            <span>{item.message}</span>
-                         </li>;
+                        <img src={item.avatar} alt="avatar"/>
+                        <span>{item.message}</span>
+                    </li>;
                 }
                 return <li key={index} className="right-item chat-item">
                     <img src={item.avatar} alt="avatar"/>
                     <span>{item.message}</span>
-                    </li>;
+                </li>;
 
             });
         }
@@ -28,12 +28,10 @@ class ChatWrap extends React.Component{
     render() {
         const {chatWindow} = this.props;
         return <div className="chat-wrap">
-                <HeadItem name={chatWindow.data ? chatWindow.data.name : null}/>
-                <div className="main-content-wrap">
-                    <ul>
-                        {this.chatList(chatWindow)}
-                    </ul>
-                </div>
+            <HeadItem name={chatWindow.data ? chatWindow.data.name : null}/>
+            <div className="main-content-wrap">
+                <ul>{this.chatList(chatWindow)}</ul>
+            </div>
             <SendMessage receiver={chatWindow.data.sender}/>
         </div>;
     }

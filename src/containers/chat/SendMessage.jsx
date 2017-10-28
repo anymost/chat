@@ -33,7 +33,7 @@ class SendMessage extends React.Component {
         return <div className="send-wrap">
             <ToolBar/>
             <textarea className="input-content" value={this.state.message}
-            onChange={this.handleInput} onKeyDown={this.handleSend}
+                onChange={this.handleInput} onKeyDown={this.handleSend}
             />
         </div>;
     }

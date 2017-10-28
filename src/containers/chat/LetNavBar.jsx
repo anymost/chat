@@ -20,8 +20,7 @@ class LeftNavBar extends React.Component {
     render() {
         const {avatar} = getUserInfo();
         return <div className="let-nav-wrap">
-            <img width={'60px'} height={'55px'} className="avatar"
-                 src={avatar} alt="avatar"/>
+            <img width={'60px'} height={'55px'} className="avatar" src={avatar} alt="avatar"/>
             <ul>
                 <li className="icon-item">
                     <Link to="/">

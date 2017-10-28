@@ -19,10 +19,10 @@ function chooseToDispatch(data) {
 
 export default function userLogin(action$) {
     return action$.ofType(ActionTypes.LOGIN_START)
-            .switchMap(action => ajax.post(`${window.APIDOMAIN}/login`, action.payload)
-                    .map(data => data.response)
-                    .map(data => chooseToDispatch(data))
-                    .catch(() => Observable.of(loginFailed('网络异常')))
-            );
+        .switchMap(action => ajax.post(`${window.APIDOMAIN}/login`, action.payload)
+            .map(data => data.response)
+            .map(data => chooseToDispatch(data))
+            .catch(() => Observable.of(loginFailed('网络异常')))
+        );
 
 }

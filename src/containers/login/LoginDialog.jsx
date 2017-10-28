@@ -104,11 +104,11 @@ class LoginDialog extends React.Component {
         const type = this.state.type;
         return <div>
             <Modal title="登陆失败" visible={this.props.userLogin.loginState === 'failed'}
-                   onOk={this.handleLoginFailed} onCancel={this.handleLoginFailed}>
+                onOk={this.handleLoginFailed} onCancel={this.handleLoginFailed}>
                 <h4>{this.props.userLogin.message}</h4>
             </Modal>
             <Modal title="注册" visible={this.props.userRegistry.registryState === 'failed'}
-                   onOk={this.handleRegistryFailed} onCancel={this.handleRegistryFailed}>
+                onOk={this.handleRegistryFailed} onCancel={this.handleRegistryFailed}>
                 <h4>{this.props.userRegistry.message}</h4>
             </Modal>
             <div className='login-content'>
@@ -116,12 +116,11 @@ class LoginDialog extends React.Component {
                 <img className='logo' src={require('../../static/images/logo.jpg')} alt='logo'/>
                 }
                 <form>
-                    <LoginInputGroup userName={this.state.userName} password={this.state.password}
-                                     handleInput={this.handleInput}
+                    <LoginInputGroup userName={this.state.userName} password={this.state.password}                       handleInput={this.handleInput}
                     />
                     {type !== 'login' &&
                     <RegistryInputGroup email={this.state.email} phone={this.state.phone}
-                                        handleInput={this.handleInput}/>
+                        handleInput={this.handleInput}/>
                     }
                     {type !== 'login' &&
                     <Upload onChange={this.handleUpload} {...this.state.uploadOptions}>
@@ -131,17 +130,18 @@ class LoginDialog extends React.Component {
                     </Upload>
                     }
                     {type === 'login' ? (
+                        <div>
                             <div>
-                                <div>
-                                    <Button className="login-btn" onClick={this.handleLogin}>登陆</Button>
-                                </div>
-                                <div>
-                                    <Button className="registry-btn" onClick={this.changeToRegistry}>注册</Button>
-                                </div>
-                            </div>) : (
+                                <Button className="login-btn" onClick={this.handleLogin}>登陆</Button>
+                            </div>
                             <div>
-                                <Button className="login-btn" onClick={this.handleRegistry}>注册</Button>
-                            </div>  )
+                                <Button className="registry-btn" onClick={this.changeToRegistry}>
+                                    注册</Button>
+                            </div>
+                        </div>) : (
+                        <div>
+                            <Button className="login-btn" onClick={this.handleRegistry}>注册</Button>
+                        </div>  )
                     }
                 </form>
 
@@ -157,7 +157,5 @@ class LoginDialog extends React.Component {
     }
 }
 
-export default connect((
-        {userLogin, userRegistry}) => ({userLogin: mapLoginProps(userLogin), userRegistry}),
-        {startLogin, loginInit, loginSuccess, startRegistry, registryInit, registrySuccess}
-        )(LoginDialog);
+export default connect(({userLogin, userRegistry}) => ({userLogin: mapLoginProps(userLogin), userRegistry}),
+    {startLogin, loginInit, loginSuccess, startRegistry, registryInit, registrySuccess})(LoginDialog);
