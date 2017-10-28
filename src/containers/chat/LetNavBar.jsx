@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {Icon} from 'antd';
-import {getUserInfo} from "../../tools/index";
+import {getUserInfo} from '../../tools/index';
 import '../../page/mainWindow/mainwindow.css';
 
 class LeftNavBar extends React.Component {
@@ -20,7 +20,7 @@ class LeftNavBar extends React.Component {
     render() {
         const {avatar} = getUserInfo();
         return <div className="let-nav-wrap">
-            <img width={"60px"} height={"55px"} className="avatar"
+            <img width={'60px'} height={'55px'} className="avatar"
                  src={avatar} alt="avatar"/>
             <ul>
                 <li className="icon-item">

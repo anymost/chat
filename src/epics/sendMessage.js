@@ -13,9 +13,8 @@ export default function sendMessage(action$) {
                     .map(data => {
                         if(data.code === 200){
                             return sendMessageSuccess();
-                        } else {
-                            return sendMessageFailed(data.message);
                         }
+                        return sendMessageFailed(data.message);
                     }).catch(() => Observable.of(sendMessageFailed('网络异常')))
             );
 

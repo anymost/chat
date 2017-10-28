@@ -13,9 +13,9 @@ export default function userRegistry(action$) {
                         if(data.code === 200){
                             saveUserInfo(data);
                             return registrySuccess();
-                        } else {
-                            return registryFailed(data.message);
                         }
+                        return registryFailed(data.message);
+
                     }).catch(() => Observable.of(registryFailed('网络异常')))
             );
 

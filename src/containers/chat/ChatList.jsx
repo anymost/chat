@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import SearchComp from '../../component/main/SearchComp';
-import {getUserInfo} from "../../tools/index";
-import {chatListStart} from "../../actions/chatList";
+import {getUserInfo} from '../../tools/index';
+import {chatListStart} from '../../actions/chatList';
 import {showChatWindow} from '../../actions/chatWindow';
-import {timeTransformer} from "../../tools/index";
+import {timeTransformer} from '../../tools/index';
 import './chatlist.css';
 
 class ChatList  extends React.Component {
@@ -40,7 +40,7 @@ class ChatList  extends React.Component {
                     data.map((item, index) => {
                         return <li onClick={this.chooseChat.bind(this, index, item)}  key={item.sender}
                                    className={this.state.defaultIndex === index ?
-                                           "chat-list-item active-list-item" : "chat-list-item"}>
+                                           'chat-list-item active-list-item' : 'chat-list-item'}>
                                     <img src={item.avatar} className="list-avatar" alt="avatar"/>
                                     <div>
                                         <h3>{item.name}</h3>

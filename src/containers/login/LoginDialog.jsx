@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Button, message, Modal, Upload, Icon} from 'antd';
-import {startLogin, loginInit, loginSuccess} from "../../actions/login";
-import {startRegistry, registrySuccess, registryInit} from "../../actions/registry";
+import {startLogin, loginInit, loginSuccess} from '../../actions/login';
+import {startRegistry, registrySuccess, registryInit} from '../../actions/registry';
 import LoginInputGroup from '../../component/login/LoginInputGroup';
 import RegistryInputGroup from '../../component/login/RegistryInputGroup';
 import {loginVerify} from '../../tools/index';
-import {mapLoginProps} from "../../selector/main";
+import {mapLoginProps} from '../../selector/main';
 import './login.css';
 
 class LoginDialog extends React.Component {

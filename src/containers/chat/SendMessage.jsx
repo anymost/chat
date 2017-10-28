@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getUserInfo} from "../../tools/index";
-import {startSendMessage} from "../../actions/sendMessage";
+import {getUserInfo} from '../../tools/index';
+import {startSendMessage} from '../../actions/sendMessage';
 import ToolBar from './ToolBar';
 import './sendMessage.css';
 

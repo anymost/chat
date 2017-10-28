@@ -1,4 +1,4 @@
-import {LOGIN_INIT, LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILED} from "../ActionType";
+import {LOGIN_INIT, LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILED} from '../ActionType';
 export function loginInit() {
     return {
         type: LOGIN_INIT,

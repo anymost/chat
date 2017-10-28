@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {mapChatList} from "../../selector/main";
+import {mapChatList} from '../../selector/main';
 import SendMessage from './SendMessage';
 import HeadItem from '../../component/main/HeadItem';
 import './chatWrap.css';
@@ -9,23 +9,21 @@ class ChatWrap extends React.Component{
     chatList(chatWindow) {
         if (chatWindow.data) {
             const message = chatWindow.data.message;
-            let list = message.map((item, index) => {
+            return message.map((item, index) => {
                 if (item.type === 'sender') {
                     return <li key={index} className="left-item chat-item">
                             <img src={item.avatar} alt="avatar"/>
                             <span>{item.message}</span>
                          </li>;
-                } else {
-                    return <li key={index} className="right-item chat-item">
-                        <img src={item.avatar} alt="avatar"/>
-                        <span>{item.message}</span>
-                        </li>;
                 }
+                return <li key={index} className="right-item chat-item">
+                    <img src={item.avatar} alt="avatar"/>
+                    <span>{item.message}</span>
+                    </li>;
+
             });
-            return list;
-        } else {
-            return null;
         }
+        return null;
     }
     render() {
         const {chatWindow} = this.props;

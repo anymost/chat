@@ -1,4 +1,4 @@
-import {SEND_MESSAGE_START, SEND_MESSAGE_SUCCESS, SEND_MESSAGE_FAILED} from "../ActionType";
+import {SEND_MESSAGE_START, SEND_MESSAGE_SUCCESS, SEND_MESSAGE_FAILED} from '../ActionType';
 
 export function startSendMessage(data) {
     return {
