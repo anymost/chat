@@ -11,7 +11,7 @@ class MainWindow extends React.Component{
         return <div className="main-wrap">
             <LeftNavBar/>
             {this.props.children}
-        </div>
+        </div>;
     }
     render() {
         const isWindowShow = this.props.userLogin.loginState === 'success'

@@ -11,7 +11,7 @@ function  LoginBtnGroup(props) {
             <Input type="password" placeholder='请输入密码' value={props.password}
                    onChange={props.handleInput.bind(this, 'password')}/>
         </div>
-    </div>)
+    </div>);
 
 }
 

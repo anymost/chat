@@ -1,4 +1,4 @@
-import * as ActionTypes from '../ActionType'
+import * as ActionTypes from '../ActionType';
 
 
 export default function chatList(state = {}, action) {

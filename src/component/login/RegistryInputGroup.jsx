@@ -12,7 +12,7 @@ function  RegistryInputGroup(props) {
                    onChange={props.handleInput.bind(this, 'phone')}/>
         </div>
 
-    </div>)
+    </div>);
 
 }
 

@@ -7,7 +7,7 @@ import './chatWrap.css';
 
 class ChatWrap extends React.Component{
     constructor(props) {
-        super(props)
+        super(props);
     }
     chatList(chatWindow) {
         if (chatWindow.data) {
@@ -17,12 +17,12 @@ class ChatWrap extends React.Component{
                     return <li key={index} className="left-item chat-item">
                             <img src={item.avatar} alt="avatar"/>
                             <span>{item.message}</span>
-                         </li>
+                         </li>;
                 } else {
                     return <li key={index} className="right-item chat-item">
                         <img src={item.avatar} alt="avatar"/>
                         <span>{item.message}</span>
-                        </li>
+                        </li>;
                 }
             });
             return list;

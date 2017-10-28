@@ -7,7 +7,7 @@ class ToolBar extends React.Component {
     }
 
     render() {
-        return <div className="tool-bar-wrap"></div>;
+        return <div className="tool-bar-wrap"/>;
     }
 }
 

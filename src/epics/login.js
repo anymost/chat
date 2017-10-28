@@ -1,8 +1,8 @@
-import {Observable} from 'rxjs'
-import {ajax} from 'rxjs/observable/dom/ajax'
-import * as ActionTypes from '../ActionType'
-import {loginSuccess, loginFailed} from "../actions/login"
-import {saveUserInfo} from "../tools/index"
+import {Observable} from 'rxjs';
+import {ajax} from 'rxjs/observable/dom/ajax';
+import * as ActionTypes from '../ActionType';
+import {loginSuccess, loginFailed} from "../actions/login";
+import {saveUserInfo} from "../tools/index";
 
 
 

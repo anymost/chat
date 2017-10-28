@@ -1,8 +1,8 @@
-import {Observable} from 'rxjs'
-import {ajax} from 'rxjs/observable/dom/ajax'
-import * as ActionTypes from '../ActionType'
-import {registrySuccess, registryFailed} from "../actions/registry"
-import {saveUserInfo} from "../tools/index"
+import {Observable} from 'rxjs';
+import {ajax} from 'rxjs/observable/dom/ajax';
+import * as ActionTypes from '../ActionType';
+import {registrySuccess, registryFailed} from '../actions/registry';
+import {saveUserInfo} from '../tools/index';
 
 
 export default function userRegistry(action$) {

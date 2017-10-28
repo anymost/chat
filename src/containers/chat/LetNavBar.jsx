@@ -9,7 +9,7 @@ class LeftNavBar extends React.Component {
         super(props);
         this.state = {
             defaultIndex: 0
-        }
+        };
     }
 
     changeIcon = (index) => {

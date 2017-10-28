@@ -7,7 +7,7 @@ function Chat() {
     return <div>
         <ChatList/>
         <ChatWrap/>
-    </div>
+    </div>;
 }
 
 export default Chat;

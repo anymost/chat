@@ -1,9 +1,9 @@
-import {LOGIN_INIT, LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILED} from "../ActionType"
+import {LOGIN_INIT, LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILED} from "../ActionType";
 export function loginInit() {
     return {
         type: LOGIN_INIT,
         message: ''
-    }
+    };
 }
 
 export function startLogin(data) {
@@ -11,7 +11,7 @@ export function startLogin(data) {
         type: LOGIN_START,
         message: '登录中',
         payload: data
-    }
+    };
 }
 
 export function loginSuccess(data) {
@@ -19,12 +19,12 @@ export function loginSuccess(data) {
         type: LOGIN_SUCCESS,
         message: '登陆成功',
         data
-    }
+    };
 }
 
 export function loginFailed(message) {
     return {
         type: LOGIN_FAILED,
         message
-    }
+    };
 }

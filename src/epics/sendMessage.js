@@ -1,7 +1,7 @@
-import {Observable} from 'rxjs'
-import {ajax} from 'rxjs/observable/dom/ajax'
-import {SEND_MESSAGE_START} from '../ActionType'
-import {sendMessageSuccess, sendMessageFailed} from "../actions/sendMessage"
+import {Observable} from 'rxjs';
+import {ajax} from 'rxjs/observable/dom/ajax';
+import {SEND_MESSAGE_START} from '../ActionType';
+import {sendMessageSuccess, sendMessageFailed} from '../actions/sendMessage';
 
 
 

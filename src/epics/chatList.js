@@ -1,7 +1,7 @@
-import {Observable} from 'rxjs'
-import {ajax} from 'rxjs/observable/dom/ajax'
-import * as ActionTypes from '../ActionType'
-import {chatListSuccess, chatListFailed} from "../actions/chatList"
+import {Observable} from 'rxjs';
+import {ajax} from 'rxjs/observable/dom/ajax';
+import * as ActionTypes from '../ActionType';
+import {chatListSuccess, chatListFailed} from "../actions/chatList";
 import {showChatWindow} from "../actions/chatWindow";
 
 

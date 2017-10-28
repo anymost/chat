@@ -1,4 +1,4 @@
-import {getUserInfo, saveUserInfo} from "../tools/index";
+import {getUserInfo, saveUserInfo} from '../tools/index';
 export function mapChatList(chatWindow) {
     let result = Object.assign({}, chatWindow);
     let data = [];
