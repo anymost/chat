@@ -4,9 +4,6 @@ import LeftNavBar from '../../containers/chat/LetNavBar';
 import './mainwindow.css';
 
 class MainWindow extends React.Component{
-    constructor(props) {
-        super(props);
-    }
     mainWindow() {
         return <div className="main-wrap">
             <LeftNavBar/>

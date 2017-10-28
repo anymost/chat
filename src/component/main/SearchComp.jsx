@@ -4,10 +4,6 @@ import './searchComp.css';
 const Search = Input.Search;
 
 class SearchComp extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return <div className="search-comp-wrap">
             <Search placeholder="搜索" value={this.props.value}

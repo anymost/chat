@@ -39,5 +39,4 @@ class SendMessage extends React.Component {
     }
 }
 
-export default connect(({sendMessage})=>({sendMessage}), {startSendMessage})
-(SendMessage);
+export default connect(({sendMessage})=>({sendMessage}), {startSendMessage})(SendMessage);

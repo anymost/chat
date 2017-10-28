@@ -6,9 +6,6 @@ import HeadItem from '../../component/main/HeadItem';
 import './chatWrap.css';
 
 class ChatWrap extends React.Component{
-    constructor(props) {
-        super(props);
-    }
     chatList(chatWindow) {
         if (chatWindow.data) {
             const message = chatWindow.data.message;

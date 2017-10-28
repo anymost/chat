@@ -47,7 +47,7 @@ class ChatList  extends React.Component {
                                         <p>{item.data[0].message}</p>
                                     </div>
                                     <span>{timeTransformer(item.data[0].date)}</span>
-                                </li>
+                                </li>;
                         })
                     }
                 </ul>
