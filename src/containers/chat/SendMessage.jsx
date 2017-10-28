@@ -26,6 +26,7 @@ class SendMessage extends React.Component {
                 receiver,
                 message: this.state.message
             });
+            this.setState({message: ''});
         }
     };
 

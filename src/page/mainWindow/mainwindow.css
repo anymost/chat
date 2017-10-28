@@ -8,6 +8,7 @@
     background-color: white;
     z-index:1000;
     border-radius: 6px;
+    position: relative;
 }
 
 .let-nav-wrap{
