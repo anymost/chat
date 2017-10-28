@@ -8,7 +8,6 @@ import MainWindow from './page/mainWindow/MainWindow';
 import Chat from './page/chat/Chat';
 import List from './page/list/List';
 import Setting from './page/setting/Setting';
-
 import './App.css';
 
 

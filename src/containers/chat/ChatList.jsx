@@ -15,7 +15,6 @@ class ChatList  extends React.Component {
             id,
             defaultIndex: 0
         };
-        this.firstTime = true;
         this.props.chatListStart({id});
     }
 
@@ -26,38 +25,32 @@ class ChatList  extends React.Component {
         this.props.showChatWindow(item);
 
     };
-    componentDidUpdate() {
-        // todo fix the first load data show
+    componentDidMount() {
         const {chatList: {data}} = this.props;
-        if (this.firstTime &&data && data.length > 0) {
-            this.firstTime = false;
+        if (data && data.length > 0) {
             this.props.showChatWindow(data[0]);
         }
     }
     render() {
         let  {chatListState, data: data = []} = this.props.chatList;
-        let chatList = [];
-        if (chatListState === 'success'){
-            chatList = data.map((item, index) => {
-                return <li onClick={this.chooseChat.bind(this, index, item)}  key={item.sender}
-                           className={this.state.defaultIndex === index ?
-                                   "chat-list-item active-list-item" : "chat-list-item"}>
-                    <img src={item.avatar} className="list-avatar" alt="avatar"/>
-                    <div>
-                        <h3>{item.name}</h3>
-                        <p>{item.data[0].message}</p>
-                    </div>
-                    <span>{timeTransformer(item.data[0].date)}</span>
-
-                </li>
-            })
-        }
         return <div className="chat-list-wrap">
-            <SearchComp/>
-
-            <ul className="chat-list-ul">
-                {chatList}
-            </ul>
+                <SearchComp/>
+                <ul className="chat-list-ul">
+                    {chatListState === 'success' &&
+                    data.map((item, index) => {
+                        return <li onClick={this.chooseChat.bind(this, index, item)}  key={item.sender}
+                                   className={this.state.defaultIndex === index ?
+                                           "chat-list-item active-list-item" : "chat-list-item"}>
+                                    <img src={item.avatar} className="list-avatar" alt="avatar"/>
+                                    <div>
+                                        <h3>{item.name}</h3>
+                                        <p>{item.data[0].message}</p>
+                                    </div>
+                                    <span>{timeTransformer(item.data[0].date)}</span>
+                                </li>
+                        })
+                    }
+                </ul>
         </div>;
     }
 }

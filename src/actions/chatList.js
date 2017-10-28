@@ -14,7 +14,7 @@ export function chatListSuccess(payload) {
     }
 }
 
-export function chantListFailed(message) {
+export function chatListFailed(message) {
     return {
         type: CHAT_LIST_FAILED,
         data: message

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import LeftNavBar from '../../containers/main/LetNavBar';
+import LeftNavBar from '../../containers/chat/LetNavBar';
 import './mainwindow.css';
 
 class MainWindow extends React.Component{
