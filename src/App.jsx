@@ -14,28 +14,28 @@ import './App.css';
 class App extends React.Component {
     render() {
         return (
-            <ErrorHandler>
-                <div className="App">
-                    <BgContainer/>
-                    <LoginDialog/>
-                    <MainWindow>
-                        {this.props.children}
-                    </MainWindow>
-                </div>
-            </ErrorHandler>
+            <div className="App">
+                <BgContainer/>
+                <LoginDialog/>
+                <MainWindow>
+                    {this.props.children}
+                </MainWindow>
+            </div>
         );
     }
 }
 
 const Root = () => (
-    <Provider store={store}>
-        <Router history={browserHistory}>
-            <Route path='/' component={App}>
-                <IndexRoute component={Chat}/>
-                <Route path="list" component={List}/>
-                <Route path="setting" component={Setting}/>
-            </Route>
-        </Router>
-    </Provider>
+    <ErrorHandler>
+        <Provider store={store}>
+            <Router history={browserHistory}>
+                <Route path='/' component={App}>
+                    <IndexRoute component={Chat}/>
+                    <Route path="list" component={List}/>
+                    <Route path="setting" component={Setting}/>
+                </Route>
+            </Router>
+        </Provider>
+    </ErrorHandler>
 );
 export default Root;
