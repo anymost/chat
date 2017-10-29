@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Provider} from 'react-redux';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import store from './configureStore';
+import ErrorHandler from './component/main/ErrorHandler';
 import LoginDialog from './containers/login/LoginDialog';
 import BgContainer from './containers/bgContainer/BgContainer';
 import MainWindow from './page/mainWindow/MainWindow';
@@ -13,13 +14,15 @@ import './App.css';
 class App extends React.Component {
     render() {
         return (
-            <div className="App">
-                <BgContainer/>
-                <LoginDialog/>
-                <MainWindow>
-                    {this.props.children}
-                </MainWindow>
-            </div>
+            <ErrorHandler>
+                <div className="App">
+                    <BgContainer/>
+                    <LoginDialog/>
+                    <MainWindow>
+                        {this.props.children}
+                    </MainWindow>
+                </div>
+            </ErrorHandler>
         );
     }
 }

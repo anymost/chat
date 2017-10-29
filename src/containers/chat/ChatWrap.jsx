@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import {mapChatList} from '../../selector/main';
 import SendMessage from './SendMessage';
 import HeadItem from '../../component/main/HeadItem';
@@ -8,14 +7,7 @@ import MessageItem from '../../component/chat/MessageItem';
 import './chatWrap.css';
 
 class ChatWrap extends React.Component{
-    getChildContext() {
-        return {
-            selectEmoji: this.selectEmoji
-        };
-    }
-    selectEmoji(value) {
-        console.log(value);
-    }
+
     setScrollHeight = () => {
         const height = window.getComputedStyle(this.list).height;
         this.container.scrollTo(0, parseInt(height, 10));
@@ -47,7 +39,4 @@ class ChatWrap extends React.Component{
     }
 }
 
-ChatWrap.childContextTypes = {
-    selectEmoji: PropTypes.func
-};
 export default connect(({chatWindow})=>({chatWindow: mapChatList(chatWindow)}))(ChatWrap);

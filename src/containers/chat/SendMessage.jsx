@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getUserInfo} from '../../tools/index';
 import {startSendMessage} from '../../actions/sendMessage';
@@ -13,7 +14,14 @@ class SendMessage extends React.Component {
         };
         this.sender = getUserInfo().id;
     }
-
+    getChildContext() {
+        return {
+            selectEmoji: this.selectEmoji
+        };
+    }
+    selectEmoji(value) {
+        console.log(value);
+    }
     handleInput = (event) => {
         this.setState({message: event.target.value});
     };
@@ -39,5 +47,8 @@ class SendMessage extends React.Component {
         </div>;
     }
 }
+SendMessage.childContextTypes = {
+    selectEmoji: PropTypes.func
+};
 
 export default connect(({sendMessage})=>({sendMessage}), {startSendMessage})(SendMessage);
