@@ -9,6 +9,7 @@ class PickerWrap extends React.Component {
         this.el = document.createElement('div');
     }
     selectEmoji = value => {
+        this.props.hidePicker();
         this.context.selectEmoji(value.id);
     };
     render() {

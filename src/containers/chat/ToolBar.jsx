@@ -10,16 +10,21 @@ class ToolBar extends React.Component {
             isPickerShow: false
         };
     }
-    showPicker = () => {
+    handlePickerShow = (value) => {
         this.setState({
-            isPickerShow: true
+            isPickerShow: value
         });
     };
     render() {
+        const {isPickerShow} = this.state;
         return <div className="tool-bar-wrap">
-            <Icon onClick={this.showPicker} className="icon-png" type="smile-o" />
+            <Icon onClick={this.handlePickerShow.bind(this, !isPickerShow)}
+                className="icon-png" type="smile-o" />
             <Icon className="icon-png" type="picture" />
-            {this.isPickerShow && <Picker />}
+            {
+                this.state.isPickerShow &&
+                <Picker hidePicker={this.handlePickerShow.bind(this, false)} />
+            }
         </div>;
     }
 }
