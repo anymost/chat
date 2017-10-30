@@ -22,12 +22,16 @@ class SendMessage extends React.Component {
         };
     }
     selectEmoji = value => {
-        const newMessage = <div>{this.state.message}<Emoji emoji={value}/></div>;
-        this.setState({message: newMessage});
+        const newMessage = `${this.state.message}[${value}]`;
+        this.container.innerHTML = newMessage;
+        this.setState({
+            message: newMessage
+        });
     };
     handleInput = (event) => {
-        const value = event.target.value;
-        this.setState({message: `${this.state.message}${value}`});
+        console.log(event.target);
+        const value = event.target.innerHTML;
+        this.setState({message: value});
     };
 
     handleSend = (event) => {
@@ -38,6 +42,7 @@ class SendMessage extends React.Component {
                 receiver,
                 message: this.state.message
             });
+            this.container.innerHTML = '';
             this.setState({message: ''});
         }
     };
@@ -46,10 +51,13 @@ class SendMessage extends React.Component {
         return <div className="send-wrap">
             <ToolBar/>
             <div ref={container => this.container = container}
-                className="input-content" onKeyDown={this.handleSend}
-                onChange={this.handleInput} contentEditable={true}
-                dangerouslySetInnerHTML={{__html: this.state.message}}
-            />
+                className="input-content"
+                contentEditable={true}
+                onKeyDown={this.handleSend}
+                onKeyUp={this.handleInput}
+            >
+
+            </div>
         </div>;
     }
 }
