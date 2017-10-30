@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="155ba418-7cf4-4ab2-8838-706958cac398" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/chat/SendMessage.jsx" afterPath="$PROJECT_DIR$/src/containers/chat/SendMessage.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,13 +19,13 @@
       <file leaf-file-name="SendMessage.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/chat/SendMessage.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+            <state relative-caret-position="354">
+              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1509371935759" expanded="true" signature="1482:1770" ph="..." />
-                <marker date="1509371935759" expanded="true" signature="1482:1785" ph="..." />
-                <marker date="1509371935759" expanded="true" signature="1694:1750" ph="..." />
+                <marker date="1509372003831" expanded="true" signature="1447:1735" ph="..." />
+                <marker date="1509372003831" expanded="true" signature="1447:1750" ph="..." />
+                <marker date="1509372003831" expanded="true" signature="1659:1715" ph="..." />
               </folding>
             </state>
           </provider>
@@ -390,12 +389,12 @@
       <workItem from="1509245908150" duration="6829000" />
       <workItem from="1509360076400" duration="555000" />
       <workItem from="1509364740848" duration="184000" />
-      <workItem from="1509368726004" duration="2868000" />
+      <workItem from="1509368726004" duration="2937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127065000" />
+    <option name="totallyTimeSpent" value="127134000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -831,13 +830,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/chat/SendMessage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        <state relative-caret-position="354">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1509371935759" expanded="true" signature="1482:1770" ph="..." />
-            <marker date="1509371935759" expanded="true" signature="1482:1785" ph="..." />
-            <marker date="1509371935759" expanded="true" signature="1694:1750" ph="..." />
+            <marker date="1509372003831" expanded="true" signature="1447:1735" ph="..." />
+            <marker date="1509372003831" expanded="true" signature="1447:1750" ph="..." />
+            <marker date="1509372003831" expanded="true" signature="1659:1715" ph="..." />
           </folding>
         </state>
       </provider>

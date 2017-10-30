@@ -29,7 +29,6 @@ class SendMessage extends React.Component {
         });
     };
     handleInput = (event) => {
-        console.log(event.target);
         const value = event.target.innerHTML;
         this.setState({message: value});
     };
