@@ -48,7 +48,7 @@
 }
 
 
-.left-item img{
+.left-item > img{
     float: left;
 }
 
@@ -59,7 +59,7 @@
     margin-left: 10px;
 }
 
-.right-item img{
+.right-item > img{
     float: right;
 }
 
@@ -68,6 +68,11 @@
     right: 40px;
     background-color: rgb(161, 231, 90);
     margin-right: 10px;
+}
+
+.chat-item > .chat-img{
+    width: 180px;
+    height: 120px;
 }
 
 #pickerContainer{

@@ -11,6 +11,8 @@ function MessageItem(props) {
         messageWrap = <span className='message-content'>{message.message}</span>;
     } else if (message.type === 2) {
         messageWrap = <span className='message-content'><Emoji emoji={message.message}/></span>;
+    } else if(message.type === 3) {
+        messageWrap = <img className='chat-img' src={message.message} alt="img"/>;
     }
 
     if (content.type === 'sender') {

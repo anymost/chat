@@ -46,7 +46,7 @@ class ChatList extends React.Component {
                         <img src={item.avatar} className="list-avatar" alt="avatar"/>
                         <div>
                             <h3>{item.name}</h3>
-                            <p>{item.data[0].message}</p>
+                            <p>{JSON.parse(item.data[0].message).message}</p>
                         </div>
                         <span>{timeTransformer(item.data[0].date)}</span>
                     </li>;

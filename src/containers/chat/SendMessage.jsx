@@ -1,11 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getUserInfo} from '../../tools/index';
 import {startSendMessage} from '../../actions/sendMessage';
 import ToolBar from './ToolBar';
-import Emoji from '../../component/chat/Emoji';
 import './sendMessage.css';
 
 class SendMessage extends React.Component {
@@ -47,9 +45,13 @@ class SendMessage extends React.Component {
         }
     };
 
+    handlePicture = (value) => {
+        const message = JSON.stringify({type: 3, message: value});
+        this.sendMessage(message);
+    };
     render() {
         return <div className="send-wrap">
-            <ToolBar/>
+            <ToolBar sendPicture = {this.handlePicture}/>
             <textarea
                 className="input-content"
                 onKeyDown={this.handleSend}
