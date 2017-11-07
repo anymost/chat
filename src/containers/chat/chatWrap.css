@@ -33,13 +33,13 @@
     clear: both;
 }
 
-.chat-item img{
+.chat-item > img{
     width: 35px;
     height: 30px;
     border-radius: 4px;
 }
 
-.chat-item span{
+.chat-item > span{
     position: absolute;
     display: inline-block;
     border-radius: 4px;
@@ -52,7 +52,7 @@
     float: left;
 }
 
-.left-item span{
+.left-item > span{
     position: absolute;
     left: 40px;
     background-color: #ffffff;
@@ -63,7 +63,7 @@
     float: right;
 }
 
-.right-item span{
+.right-item > span{
     position: absolute;
     right: 40px;
     background-color: rgb(161, 231, 90);

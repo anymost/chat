@@ -13,8 +13,15 @@ class PickerWrap extends React.Component {
         this.context.selectEmoji(value.id);
     };
     render() {
-        return  ReactDOM.createPortal(<Picker onClick={this.selectEmoji}
-            emojiSize={16} perLine={11} skin={1} set='apple'/>, this.el);
+        return  ReactDOM.createPortal(
+            <Picker
+                onClick={this.selectEmoji}
+                emojiSize={16}
+                perLine={11}
+                skin={1}
+                set='apple'
+            />,
+            this.el);
     }
     componentDidMount() {
         this.container = document.querySelector('#pickerContainer');

@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {getUserInfo} from '../../tools/index';
 import {startSendMessage} from '../../actions/sendMessage';
 import ToolBar from './ToolBar';
-import Emoji from './Emoji';
+import Emoji from '../../component/chat/Emoji';
 import './sendMessage.css';
 
 class SendMessage extends React.Component {
@@ -21,27 +21,28 @@ class SendMessage extends React.Component {
             selectEmoji: this.selectEmoji
         };
     }
-    selectEmoji = value => {
-        const newMessage = `${this.state.message}[${value}]`;
-        this.container.innerHTML = newMessage;
-        this.setState({
-            message: newMessage
+    sendMessage(message) {
+        const {startSendMessage,receiver} = this.props;
+        startSendMessage({
+            sender: this.sender,
+            receiver,
+            message: message
         });
+    }
+    selectEmoji = value => {
+        const message = JSON.stringify({type: 2, message: value});
+        this.sendMessage(message);
     };
     handleInput = (event) => {
-        const value = event.target.innerHTML;
+        const value = event.target.value;
         this.setState({message: value});
     };
 
     handleSend = (event) => {
-        const {sendMessage, startSendMessage,receiver} = this.props;
+        const {sendMessage} = this.props;
         if (event.keyCode === 13 && sendMessage.state !== 'start') {
-            startSendMessage({
-                sender: this.sender,
-                receiver,
-                message: this.state.message
-            });
-            this.container.innerHTML = '';
+            const message = JSON.stringify({type: 1, message: this.state.message});
+            this.sendMessage(message);
             this.setState({message: ''});
         }
     };
@@ -49,14 +50,12 @@ class SendMessage extends React.Component {
     render() {
         return <div className="send-wrap">
             <ToolBar/>
-            <div ref={container => this.container = container}
+            <textarea
                 className="input-content"
-                contentEditable={true}
                 onKeyDown={this.handleSend}
-                onKeyUp={this.handleInput}
-            >
-
-            </div>
+                onChange={this.handleInput}
+                value={this.state.message}
+            />
         </div>;
     }
 }
