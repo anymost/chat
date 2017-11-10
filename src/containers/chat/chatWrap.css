@@ -82,3 +82,24 @@
     z-index: 999;
     box-shadow: #ddd 5px 5px 5px;
 }
+
+.image-wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.image-wrap img{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}

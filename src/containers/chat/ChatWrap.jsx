@@ -7,7 +7,6 @@ import MessageItem from '../../component/chat/MessageItem';
 import './chatWrap.css';
 
 class ChatWrap extends React.Component{
-
     setScrollHeight = () => {
         const height = window.getComputedStyle(this.list).height;
         this.container.scrollTo(0, parseInt(height, 10));
@@ -38,5 +37,6 @@ class ChatWrap extends React.Component{
         this.setScrollHeight();
     }
 }
+
 
 export default connect(({chatWindow})=>({chatWindow: mapChatList(chatWindow)}))(ChatWrap);
