@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="155ba418-7cf4-4ab2-8838-706958cac398" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/containers/main/NavList.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/containers/chat/chatlist.css" afterPath="$PROJECT_DIR$/src/containers/chat/chatList.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/page/list/List.jsx" afterPath="$PROJECT_DIR$/src/page/friend/Friend.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/page/list/list.css" afterPath="$PROJECT_DIR$/src/page/friend/friend.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/containers/main/ContentWrap.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/webpack.config.dev.js" afterPath="$PROJECT_DIR$/config/webpack.config.dev.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/webpack.config.prod.js" afterPath="$PROJECT_DIR$/config/webpack.config.prod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.jsx" afterPath="$PROJECT_DIR$/src/App.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/chat/ChatList.jsx" afterPath="$PROJECT_DIR$/src/containers/chat/ChatList.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/main/LetNavBar.jsx" afterPath="$PROJECT_DIR$/src/containers/main/LetNavBar.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/chat/ChatWrap.jsx" afterPath="$PROJECT_DIR$/src/containers/chat/ChatWrap.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/chat/chatWrap.css" afterPath="$PROJECT_DIR$/src/containers/chat/chatWrap.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/main/wrap.css" afterPath="$PROJECT_DIR$/src/page/main/wrap.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ChatList.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/chat/ChatList.jsx">
+      <file leaf-file-name="ChatWrap.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/chat/ChatWrap.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+            <state relative-caret-position="469">
+              <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -38,20 +32,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavList.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/main/NavList.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chatList.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/chat/chatList.css">
+      <file leaf-file-name="chatWrap.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/chat/chatWrap.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -60,11 +42,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ContentWrap.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/main/ContentWrap.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="wrap.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/main/wrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="477">
+              <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -102,7 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/page/setting/Setting.jsx" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/selector/main.js" />
         <option value="$PROJECT_DIR$/src/tools/index.js" />
@@ -138,9 +131,7 @@
         <option value="$PROJECT_DIR$/src/containers/chat/Picker.jsx" />
         <option value="$PROJECT_DIR$/src/containers/chat/ToolBar.jsx" />
         <option value="$PROJECT_DIR$/src/containers/chat/SendMessage.jsx" />
-        <option value="$PROJECT_DIR$/src/containers/chat/ChatWrap.jsx" />
         <option value="$PROJECT_DIR$/src/component/chat/MessageItem.jsx" />
-        <option value="$PROJECT_DIR$/src/containers/chat/chatWrap.css" />
         <option value="$PROJECT_DIR$/src/page/chat/Chat.jsx" />
         <option value="$PROJECT_DIR$/src/component/chat/ImageWrap.jsx" />
         <option value="$PROJECT_DIR$/src/component/chat/Emoji.jsx" />
@@ -149,10 +140,13 @@
         <option value="$PROJECT_DIR$/src/page/friend/Friend.jsx" />
         <option value="$PROJECT_DIR$/src/App.jsx" />
         <option value="$PROJECT_DIR$/src/containers/chat/chatlist.css" />
-        <option value="$PROJECT_DIR$/src/page/main/wrap.css" />
         <option value="$PROJECT_DIR$/src/containers/main/NavList.jsx" />
         <option value="$PROJECT_DIR$/src/containers/chat/ChatList.jsx" />
         <option value="$PROJECT_DIR$/src/containers/chat/chatList.css" />
+        <option value="$PROJECT_DIR$/src/page/main/wrap.css" />
+        <option value="$PROJECT_DIR$/src/containers/chat/chatWrap.css" />
+        <option value="$PROJECT_DIR$/src/containers/chat/ChatWrap.jsx" />
+        <option value="$PROJECT_DIR$/src/containers/main/ContentWrap.jsx" />
       </list>
     </option>
   </component>
@@ -436,12 +430,12 @@
       <workItem from="1510051558703" duration="7069000" />
       <workItem from="1510280674240" duration="2240000" />
       <workItem from="1510296869274" duration="10502000" />
-      <workItem from="1510471313838" duration="2680000" />
+      <workItem from="1510471313838" duration="3353000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151998000" />
+    <option name="totallyTimeSpent" value="152671000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,7 +450,7 @@
     <frame x="0" y="23" width="1440" height="833" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14851485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28783593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825485" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -509,13 +503,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/configureStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -772,24 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/chat/ChatWrap.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/chat/chatWrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="100" column="13" lean-forward="false" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/chat/SendMessage.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -882,9 +851,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/main/NavList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/chat/ChatList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
+        <state relative-caret-position="513">
           <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -902,19 +881,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/main/wrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state relative-caret-position="477">
+          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/main/NavList.jsx">
+    <entry file="file://$PROJECT_DIR$/src/containers/main/ContentWrap.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        <state relative-caret-position="176">
+          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/chat/ChatWrap.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/chat/chatWrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

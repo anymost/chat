@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {mapChatList} from '../../selector/main';
+import ContentWrap from '../../containers/main/ContentWrap';
 import SendMessage from './SendMessage';
 import HeadItem from '../../component/main/HeadItem';
 import MessageItem from '../../component/chat/MessageItem';
@@ -13,10 +14,10 @@ class ChatWrap extends React.Component{
     };
     render() {
         const {chatWindow} = this.props;
-        return <div className="chat-wrap">
+        return <div>
             <HeadItem name={chatWindow.data ? chatWindow.data.name : null}/>
             <div id="pickerContainer"/>
-            <div className="main-content-wrap" ref={container => this.container = container}>
+            <div className="chat-content-wrap" ref={container => this.container = container}>
                 <ul ref={list => this.list = list}>
                     {
                         chatWindow.data &&
@@ -38,5 +39,7 @@ class ChatWrap extends React.Component{
     }
 }
 
+const ChatContentWrap = ContentWrap(ChatWrap);
 
-export default connect(({chatWindow})=>({chatWindow: mapChatList(chatWindow)}))(ChatWrap);
+
+export default connect(({chatWindow})=>({chatWindow: mapChatList(chatWindow)}))(ChatContentWrap);

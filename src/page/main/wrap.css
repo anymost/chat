@@ -39,6 +39,19 @@
     overflow-y: auto;
 }
 
+.content-wrap{
+    position: absolute;
+    top: 0;
+    left:330px;
+    bottom: 0;
+    width: 470px;
+    background-color: rgb(243, 243, 243);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .avatar{
     margin: 50px 13%;
     border-radius: 4px;
