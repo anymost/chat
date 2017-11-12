@@ -7,7 +7,7 @@ import LoginDialog from './containers/login/LoginDialog';
 import BgContainer from './containers/bgContainer/BgContainer';
 import Wrap from './page/main/Wrap';
 import Chat from './page/chat/Chat';
-import List from './page/list/List';
+import Friend from './page/friend/Friend';
 import Setting from './page/setting/Setting';
 import './App.css';
 
@@ -31,7 +31,7 @@ const Root = () => (
             <Router history={browserHistory}>
                 <Route path='/' component={App}>
                     <IndexRoute component={Chat}/>
-                    <Route path="list" component={List}/>
+                    <Route path="friend" component={Friend}/>
                     <Route path="setting" component={Setting}/>
                 </Route>
             </Router>

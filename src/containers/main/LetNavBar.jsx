@@ -20,7 +20,7 @@ class LeftNavBar extends React.Component {
         const {avatar} = getUserInfo();
         const listInfo = [
             {route: '/', type: 'book'},
-            {route: '/list', type: 'user'},
+            {route: '/friend', type: 'user'},
             {route: '/setting', type: 'setting'}
         ];
 

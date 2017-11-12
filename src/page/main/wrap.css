@@ -1,5 +1,4 @@
 .main-wrap{
-    position: fixed;
     top: 50px;
     left: 50%;
     width: 800px;
@@ -20,6 +19,24 @@
     background-color: rgb(38, 38, 38);
     border-bottom-left-radius: 6px;
     border-top-left-radius: 6px;
+}
+
+.list-wrap{
+    width: 250px;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid rgb(239, 239, 239);
+}
+
+.list-wrap > .list-hole{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-y: auto;
 }
 
 .avatar{

@@ -1,11 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import SearchComp from '../../component/main/SearchComp';
+import NavList from '../main/NavList';
 import {getUserInfo} from '../../tools/index';
 import {chatListStart} from '../../actions/chatList';
 import {showChatWindow} from '../../actions/chatWindow';
 import {timeTransformer} from '../../tools/index';
-import './chatlist.css';
+import './chatList.css';
 
 class ChatList extends React.Component {
     constructor(props) {
@@ -35,14 +35,12 @@ class ChatList extends React.Component {
 
     render() {
         let {chatListState, data: data = []} = this.props.chatList;
-        return <div className="chat-list-wrap">
-            <SearchComp/>
-            <ul className="chat-list-ul">
-                {chatListState === 'success' &&
+        return <ul className='chat-list'>
+            {chatListState === 'success' &&
                 data.map((item, index) => {
                     return <li onClick={this.chooseChat.bind(this, index, item)} key={item.sender}
                         className={this.state.defaultIndex === index ?
-                            'chat-list-item active-list-item' : 'chat-list-item'}>
+                            'list-item active-list-item' : 'list-item'}>
                         <img src={item.avatar} className="list-avatar" alt="avatar"/>
                         <div>
                             <h3>{item.name}</h3>
@@ -51,10 +49,11 @@ class ChatList extends React.Component {
                         <span>{timeTransformer(item.data[0].date)}</span>
                     </li>;
                 })
-                }
-            </ul>
-        </div>;
+            }
+        </ul>;
     }
 }
 
-export default connect(({chatList}) => ({chatList}), {chatListStart, showChatWindow})(ChatList);
+const ChatListWrap = NavList(ChatList);
+
+export default connect(({chatList}) => ({chatList}), {chatListStart, showChatWindow})(ChatListWrap);

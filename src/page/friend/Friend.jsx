@@ -1,5 +1,5 @@
 import React from 'react';
-import './list.css';
+import './friend.css';
 
 class List extends React.Component{
     render() {
