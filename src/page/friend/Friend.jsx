@@ -1,10 +1,15 @@
 import React from 'react';
+import FriendList from '../../containers/friend/FriendList';
+import FriendWrap from '../../containers/friend/FriendWrap';
 import './friend.css';
 
-class List extends React.Component{
+class Friend extends React.Component{
     render() {
-        return <div/>;
+        return <div>
+            <FriendList/>
+            <FriendWrap/>
+        </div>;
     }
 }
 
-export default List;
+export default Friend;
