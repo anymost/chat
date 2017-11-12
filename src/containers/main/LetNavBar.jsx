@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import {Icon} from 'antd';
 import {getUserInfo} from '../../tools/index';
-import '../../page/mainWindow/mainwindow.css';
+import '../../page/main/wrap.css';
 
 class LeftNavBar extends React.Component {
     constructor(props) {

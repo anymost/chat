@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import LeftNavBar from '../../containers/main/LetNavBar';
-import './mainwindow.css';
+import './wrap.css';
 
 class MainWindow extends React.Component{
     mainWindow() {

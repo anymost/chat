@@ -5,7 +5,7 @@ import store from './configureStore';
 import ErrorHandler from './component/main/ErrorHandler';
 import LoginDialog from './containers/login/LoginDialog';
 import BgContainer from './containers/bgContainer/BgContainer';
-import MainWindow from './page/mainWindow/MainWindow';
+import Wrap from './page/main/Wrap';
 import Chat from './page/chat/Chat';
 import List from './page/list/List';
 import Setting from './page/setting/Setting';
@@ -17,9 +17,9 @@ class App extends React.Component {
             <div className="App">
                 <BgContainer/>
                 <LoginDialog/>
-                <MainWindow>
+                <Wrap>
                     {this.props.children}
-                </MainWindow>
+                </Wrap>
             </div>
         );
     }
