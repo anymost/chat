@@ -27,3 +27,9 @@ export const SEND_MESSAGE_START = 'send_message_start';
 export const SEND_MESSAGE_SUCCESS = 'send_message_success';
 
 export const SEND_MESSAGE_FAILED = 'send_message_failed';
+
+export const FETCH_FRIENDS_START = 'fetch_friends_start';
+
+export const FETCH_FRIENDS_SUCCESS = 'fetch_friends_success';
+
+export const FETCH_FRIENDS_FAILED ='fetch_friends_failed';

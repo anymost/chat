@@ -15,7 +15,7 @@ class ChatList extends React.Component {
             id,
             defaultIndex: 0
         };
-        this.props.chatListStart({id});
+
     }
 
     chooseChat = (index, item) => {
@@ -25,6 +25,9 @@ class ChatList extends React.Component {
         this.props.showChatWindow(item);
 
     };
+    componentWillMount() {
+        this.props.chatListStart({id: this.state.id});
+    }
 
     componentDidMount() {
         const {chatList: {data}} = this.props;
