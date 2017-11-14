@@ -4,6 +4,7 @@ import userRegistry from './registry';
 import chatList from './chatList';
 import chatWindow from './chatWindow';
 import sendMessage from './sendMessage';
+import fetchFriends from './fetchFriends';
 
 
 const reducers = combineReducers({
@@ -11,7 +12,8 @@ const reducers = combineReducers({
     userRegistry,
     chatList,
     chatWindow,
-    sendMessage
+    sendMessage,
+    fetchFriends
 });
 
 export default reducers;
