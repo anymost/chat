@@ -1,0 +1,8 @@
+.friend-list > .friend-item{
+    height: 70px;
+}
+
+
+.friend-item img.avatar{
+    float: left;
+}
