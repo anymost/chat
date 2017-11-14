@@ -22,7 +22,7 @@ class FriendList extends React.Component {
                 friendList.fetchState === 'success' &&
                 friendList.data.code === 200 &&
                 friendList.data.data.map(item =>
-                    <FriendItem key={item.name} {...item}/>)
+                    <FriendItem  key={item.name}{...item}/>)
             }
         </ul>;
     }

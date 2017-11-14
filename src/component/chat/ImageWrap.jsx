@@ -7,7 +7,7 @@ function ImageWrap(props){
         display: props.isImageShow ? 'block' : 'none'
     };
     return<div style={style} onClick={props.hideImage} className='image-wrap'>
-        <img src={props.url} alt={'image-wrap'}/>
+        <img src={props.url} alt={`image-wrap-${Math.random()}`}/>
     </div>;
 }
 

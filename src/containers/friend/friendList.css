@@ -1,8 +1,31 @@
 .friend-list > .friend-item{
+    padding: 5px 5px;
     height: 70px;
+    border-bottom: 1px solid rgb(239, 239, 239);
+    color: rgb(209, 209, 209);
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.friend-list > .friend-item:after{
+    clear: both;
+    display: block;
+    visibility: hidden;
+    content: '';
 }
 
 
-.friend-item img.avatar{
+.friend-list > .friend-item > img{
+    width: 50px;
+    height: 55px;
     float: left;
+    margin: 0 5px;
+    border-radius: 6px;
+}
+
+.friend-list > .friend-item >  h3{
+    text-align: left;
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
 }
