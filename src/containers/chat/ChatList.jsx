@@ -11,8 +11,8 @@ class ChatList extends React.Component {
     constructor(props) {
         super(props);
         const {id} = getUserInfo();
+        this.id = id;
         this.state = {
-            id,
             defaultIndex: 0
         };
 
@@ -26,7 +26,7 @@ class ChatList extends React.Component {
 
     };
     componentWillMount() {
-        this.props.chatListStart({id: this.state.id});
+        this.props.chatListStart({id: this.id});
     }
 
     componentDidMount() {

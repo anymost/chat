@@ -1,0 +1,13 @@
+.friend-wrap{
+
+}
+.friend-wrap > img {
+    width: 180px;
+    height: 130px;
+    margin: 40px auto;
+}
+
+.friend-wrap > h3{
+    text-align: center;
+    margin-bottom: 40px;
+}

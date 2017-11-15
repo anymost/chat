@@ -28,7 +28,9 @@ class Friend extends React.Component{
     render() {
         return <div>
             <FriendList/>
-            <FriendWrap friendInfo={this.state.friendInfo}/>
+            <FriendWrap
+                friendInfo={this.state.friendInfo}
+            />
         </div>;
     }
 }
