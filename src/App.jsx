@@ -31,8 +31,9 @@ const Root = () => (
             <Router history={browserHistory}>
                 <Route path='/' component={App}>
                     <IndexRoute component={Chat}/>
-                    <Route path="friend" component={Friend}/>
-                    <Route path="setting" component={Setting}/>
+                    <Route path='chat/:id' component={Chat}/>
+                    <Route path='friend' component={Friend}/>
+                    <Route path='setting' component={Setting}/>
                 </Route>
             </Router>
         </Provider>

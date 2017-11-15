@@ -31,7 +31,6 @@ class Chat extends React.Component{
             <ImageWrap hideImage={this.handleImageShow.bind(this, '')} {...this.state}/>
         </div>;
     }
-
 }
 
 Chat.childContextTypes = {
