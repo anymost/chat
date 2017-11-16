@@ -16,7 +16,8 @@ const handleChatList = (action, store)=> {
 
 export default function chatList(action$, store) {
     return action$.ofType(ActionTypes.CHAT_LIST_START)
-        .switchMap(action => ajax.get(`${window.APIDOMAIN}/chatList/${action.data}`)
+        .switchMap(action => ajax.post(`${window.APIDOMAIN}/getChatList`,
+            {id: action.data})
             .map(data => data.response)
             .map(action => handleChatList(action, store))
             .catch(() => Observable.of(chatListFailed('网络异常')))
