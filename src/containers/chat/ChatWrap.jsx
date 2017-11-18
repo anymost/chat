@@ -13,22 +13,28 @@ class ChatWrap extends React.Component{
         this.container.scrollTo(0, parseInt(height, 10));
     };
     render() {
-        const {chatWindow} = this.props;
+        const {chat} = this.props;
         return <div>
-            <HeadItem name={chatWindow.data ? chatWindow.data.name : null}/>
+            <HeadItem name={chat.data ? chat.data.name : null}/>
             <div id="pickerContainer"/>
-            <div className="chat-content-wrap" ref={container => this.container = container}>
+            <div className="chat-content-wrap"
+                ref={container => this.container = container}>
                 <ul ref={list => this.list = list}>
                     {
-                        chatWindow.data &&
-                        chatWindow.data.message &&
-                        chatWindow.data.message.map((item, index) => {
+                        chat.data &&
+                        chat.data.data &&
+                        chat.data.data.map((item, index) => {
                             return <MessageItem key={index} message={item}/>;
                         })
                     }
                 </ul>
             </div>
-            <SendMessage receiver={chatWindow.data.sender}/>
+            {
+                chat.data &&
+                chat.data.sender &&
+                <SendMessage receiver={chat.data.sender}/>
+            }
+
         </div>;
     }
     componentDidMount() {
@@ -42,4 +48,4 @@ class ChatWrap extends React.Component{
 const ChatContentWrap = ContentWrap(ChatWrap);
 
 
-export default connect(({chatWindow})=>({chatWindow: mapChatList(chatWindow)}))(ChatContentWrap);
+export default connect(({chat, chatList}) => ({chat: mapChatList(chat)}))(ChatContentWrap);

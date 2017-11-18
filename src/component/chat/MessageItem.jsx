@@ -11,7 +11,6 @@ class MessageItem extends React.Component{
         const content = this.props.message;
         const message = JSON.parse(content.message);
         let messageWrap = null;
-
         if (message.type === 1) {
             messageWrap = <span className='message-content'>{message.message}</span>;
         } else if (message.type === 2) {
@@ -24,7 +23,7 @@ class MessageItem extends React.Component{
             />;
         }
 
-        if (content.type === 'sender') {
+        if (content.messageType === 'receive') {
             return <li className="left-item chat-item">
                 <img src={content.avatar} alt="avatar"/>
                 {messageWrap}

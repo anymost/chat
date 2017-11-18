@@ -1,25 +1,15 @@
 import {getUserInfo, saveUserInfo} from '../tools/index';
-export function mapChatList(chatWindow) {
-    let result = Object.assign({}, chatWindow);
-    let data = [];
-    const {avatar} = getUserInfo();
-    if (result.data && result.data.data && result.data.sendData) {
-        for (let oldItem of result.data.data) {
-            oldItem.avatar = result.data.avatar;
-            oldItem.type = 'sender';
-            data.push(oldItem);
-        }
-        for (let newItem of  result.data.sendData) {
-            newItem.avatar = avatar;
-            newItem.type = 'receiver';
-            data.push(newItem);
-        }
-        data.sort((x, y) => {
-            return x.date > y.date;
+export function mapChatList(chat) {
+    let result = Object.assign({}, chat);
+    if (result.chatState === 'success' ) {
+        const {avatar: selfAvatar, name: selfName} = getUserInfo();
+        result.data.data = result.data.data.map(item => {
+            if (item.messageType === 'send') {
+                item.name = selfName;
+                item.avatar = selfAvatar;
+            }
+            return item;
         });
-        result.data.message = data;
-    } else {
-        result.data = {message: []};
     }
     return result;
 }
