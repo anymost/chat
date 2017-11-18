@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import NavList from '../main/NavList';
 import {getUserInfo} from '../../tools/index';
 import {chatListStart} from '../../actions/chatList';
-import {showChatWindow} from '../../actions/chatWindow';
+import {startChat} from '../../actions/chat';
 import {timeTransformer} from '../../tools/index';
 import './chatList.css';
 
@@ -22,34 +22,32 @@ class ChatList extends React.Component {
         this.setState({
             defaultIndex: index
         });
-        this.props.showChatWindow(item);
+        this.props.startChat({
+            id: this.id,
+            sender: item.sender
+        });
 
     };
     componentWillMount() {
         this.props.chatListStart({id: this.id});
     }
 
-    componentDidMount() {
-        const {chatList: {data}} = this.props;
-        if (data && data.length > 0) {
-            this.props.showChatWindow(data[0]);
-        }
-    }
 
     render() {
         let {chatListState, data: data = []} = this.props.chatList;
         return <ul className='chat-list'>
             {chatListState === 'success' &&
                 data.map((item, index) => {
-                    return <li onClick={this.chooseChat.bind(this, index, item)} key={item.sender}
+                    return <li key={item.sender}
+                        onClick={this.chooseChat.bind(this, index, item)}
                         className={this.state.defaultIndex === index ?
                             'list-item active-list-item' : 'list-item'}>
                         <img src={item.avatar} className="list-avatar" alt="avatar"/>
                         <div>
                             <h3>{item.name}</h3>
-                            <p>{JSON.parse(item.data[0].message).message}</p>
+                            <p>{JSON.parse(item.message).message}</p>
                         </div>
-                        <span>{timeTransformer(item.data[0].date)}</span>
+                        <span>{timeTransformer(item.date)}</span>
                     </li>;
                 })
             }
@@ -59,4 +57,4 @@ class ChatList extends React.Component {
 
 const ChatListWrap = NavList(ChatList);
 
-export default connect(({chatList}) => ({chatList}), {chatListStart, showChatWindow})(ChatListWrap);
+export default connect(({chatList}) => ({chatList}), {chatListStart, startChat})(ChatListWrap);
