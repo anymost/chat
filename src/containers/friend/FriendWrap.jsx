@@ -1,12 +1,21 @@
 import React from 'react';
 import {browserHistory} from 'react-router';
+import {connect} from 'react-redux';
 import {Button} from 'antd';
+import {startSendMessage} from '../../actions/sendMessage';
+import {getUserInfo} from '../../tools/index';
 import ContentWrap from '../../containers/main/ContentWrap';
 import './friendWrap.css';
 
 class FriendWrap extends React.Component {
     sendMessage = () => {
         browserHistory.push('/');
+        const {id} = getUserInfo();
+        this.props.startSendMessage({
+            message: 'empty message',
+            sender: id,
+            receiver: this.props.friendInfo.id
+        });
     };
     render() {
         if (this.props.friendInfo.id) {
@@ -28,4 +37,4 @@ class FriendWrap extends React.Component {
     }
 }
 
-export default ContentWrap(FriendWrap);
+export default connect(({})=>({}), {startSendMessage})(ContentWrap(FriendWrap));

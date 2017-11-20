@@ -9,6 +9,9 @@ class MessageItem extends React.Component{
     };
     render() {
         const content = this.props.message;
+        if (content.message === 'empty message'){
+            return null;
+        }
         const message = JSON.parse(content.message);
         let messageWrap = null;
         if (message.type === 1) {
