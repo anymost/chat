@@ -9,22 +9,31 @@ class MessageItem extends React.Component{
     };
     render() {
         const content = this.props.message;
-        if (content.message === 'empty message'){
-            return null;
-        }
         const message = JSON.parse(content.message);
         let messageWrap = null;
-        if (message.type === 1) {
+        switch(message.type) {
+        case 0:
+            messageWrap = null;
+            break;
+        case 1:
             messageWrap = <span className='message-content'>{message.message}</span>;
-        } else if (message.type === 2) {
-            messageWrap = <span className='message-content'><Emoji emoji={message.message}/></span>;
-        } else if (message.type === 3) {
-            messageWrap = <img
+            break;
+        case 2:
+            messageWrap = <span className='message-content'>
+                <Emoji emoji={message.message}/>
+            </span>;
+            break;
+        case 3:
+            messageWrap = <img className='chat-img'
                 onClick={this.handleImageShow.bind(this, message.message)}
-                className='chat-img'
                 src={message.message} alt="img"
             />;
+            break;
+        default:
+            messageWrap = null;
+            break;
         }
+
 
         if (content.messageType === 'receive') {
             return <li className="left-item chat-item">

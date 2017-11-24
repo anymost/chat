@@ -9,13 +9,17 @@ import './friendWrap.css';
 
 class FriendWrap extends React.Component {
     sendMessage = () => {
-        browserHistory.push('/');
         const {id} = getUserInfo();
+        const message = JSON.stringify({
+            type: 0,
+            message: 'empty message'
+        });
         this.props.startSendMessage({
-            message: 'empty message',
+            message,
             sender: id,
             receiver: this.props.friendInfo.id
         });
+        browserHistory.push('/');
     };
     render() {
         if (this.props.friendInfo.id) {

@@ -45,8 +45,12 @@ class ChatList extends React.Component {
                         <img src={item.avatar} className="list-avatar" alt="avatar"/>
                         <div>
                             <h3>{item.name}</h3>
-                            <p>{item.message === 'empty message' ? '' :
-                                JSON.parse(item.message).message}</p>
+                            <p>
+                                {
+                                    item.message &&
+                                    JSON.parse(item.message).message
+                                }
+                            </p>
                         </div>
                         <span>{timeTransformer(item.date)}</span>
                     </li>;
