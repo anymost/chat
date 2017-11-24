@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import NavList from '../main/NavList';
+import ChatListItem from './ChatListItem';
+import {Popconfirm} from 'antd';
 import {getUserInfo} from '../../tools/index';
 import {chatListStart} from '../../actions/chatList';
 import {startChat} from '../../actions/chat';
-import {timeTransformer} from '../../tools/index';
 import './chatList.css';
 
 class ChatList extends React.Component {
@@ -15,6 +16,7 @@ class ChatList extends React.Component {
         this.state = {
             defaultIndex: 0
         };
+        this.props.chatListStart({id: this.id});
 
     }
 
@@ -28,10 +30,10 @@ class ChatList extends React.Component {
         });
 
     };
-    componentWillMount() {
-        this.props.chatListStart({id: this.id});
-    }
 
+    rightKeyClick = (index, item) => {
+
+    };
 
     render() {
         let {chatListState, data: data = []} = this.props.chatList;
@@ -40,19 +42,12 @@ class ChatList extends React.Component {
                 data.map((item, index) => {
                     return <li key={item.sender}
                         onClick={this.chooseChat.bind(this, index, item)}
+                        onContextMenu={this.rightKeyClick.bind(this, index, item)}
                         className={this.state.defaultIndex === index ?
                             'list-item active-list-item' : 'list-item'}>
-                        <img src={item.avatar} className="list-avatar" alt="avatar"/>
-                        <div>
-                            <h3>{item.name}</h3>
-                            <p>
-                                {
-                                    item.message &&
-                                    JSON.parse(item.message).message
-                                }
-                            </p>
-                        </div>
-                        <span>{timeTransformer(item.date)}</span>
+                        <Popconfirm title={'确定要删除该聊天吗?'} onConfirm={this.}>
+                            <ChatListItem {...item}/>
+                        </Popconfirm>
                     </li>;
                 })
             }
