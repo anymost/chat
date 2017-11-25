@@ -6,7 +6,7 @@ import {Popconfirm} from 'antd';
 import {getUserInfo} from '../../tools/index';
 import {chatListStart} from '../../actions/chatList';
 import {startChat} from '../../actions/chat';
-import {deleteChat} from '../../actions/deleteChat';
+import {deleteChatList} from '../../actions/deleteChat';
 import './chatList.css';
 
 class ChatList extends React.Component {
@@ -43,7 +43,7 @@ class ChatList extends React.Component {
     };
 
     deleteChat = () => {
-        this.props.deleteChat({
+        this.props.deleteChatList({
             id: this.id,
             sender: this.currentSender
         });
@@ -73,4 +73,4 @@ class ChatList extends React.Component {
 
 const ChatListWrap = NavList(ChatList);
 
-export default connect(({chatList}) => ({chatList}), {chatListStart, startChat, deleteChat})(ChatListWrap);
+export default connect(({chatList}) => ({chatList}), {chatListStart, startChat, deleteChatList})(ChatListWrap);

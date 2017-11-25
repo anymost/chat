@@ -40,8 +40,6 @@ export const FETCH_FRIENDS_SUCCESS = 'fetch_friends_success';
 
 export const FETCH_FRIENDS_FAILED ='fetch_friends_failed';
 
-export const DELETE_CHAT = 'delete_chat';
+export const DELETE_CHAT_LIST = 'delete_chat_list';
 
-export const DELETE_CHAT_SUCCESS = 'delete_chat_success';
-
-export const DELETE_CHAT_FAILED = 'delete_chat_failed';
+export const DELETE_CHAT_LIST_SUCCESS = 'delete_chat_list_success';

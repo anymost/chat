@@ -1,8 +1,15 @@
-import {DELETE_CHAT} from '../ActionType';
+import {DELETE_CHAT_LIST, DELETE_CHAT_LIST_SUCCESS} from '../ActionType';
 
-export function deleteChat(payload){
+export function deleteChatList(payload) {
     return {
-        type: DELETE_CHAT,
+        type: DELETE_CHAT_LIST,
         payload
     };
 }
+
+export function deleteChatListSuccess(payload) {
+    return {
+        type: DELETE_CHAT_LIST_SUCCESS
+    };
+}
+

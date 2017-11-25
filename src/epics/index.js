@@ -5,6 +5,7 @@ import chatList from './chatList';
 import chat from './chat';
 import sendMessage from './sendMessage';
 import fetchFriends from './fetchFriends';
+import deleteChat from './deleteChat';
 
 
 const rootEpic = combineEpics(
@@ -13,7 +14,8 @@ const rootEpic = combineEpics(
     chat,
     chatList,
     sendMessage,
-    fetchFriends
+    fetchFriends,
+    deleteChat
 );
 
 
