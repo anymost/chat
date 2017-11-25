@@ -16,6 +16,12 @@ class ChatListItem extends React.Component {
     shouldComponentUpdate(nextProps) {
         return nextProps.date !== this.props.date;
     }
+    static splitMessage(value) {
+        if (value.length < 20) {
+            return value;
+        }
+        return value.slice(0, 20) + '...';
+    }
     render() {
         return [
             <img key={1} src={this.props.avatar} className="list-avatar" alt="avatar"/>,
@@ -24,7 +30,7 @@ class ChatListItem extends React.Component {
                 <p>
                     {
                         this.props.message &&
-                        JSON.parse(this.props.message).message
+                        ChatListItem.splitMessage(JSON.parse(this.props.message).message)
                     }
                 </p>
             </div>,

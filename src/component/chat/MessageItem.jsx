@@ -10,6 +10,9 @@ class MessageItem extends React.Component{
     render() {
         const content = this.props.message;
         const message = JSON.parse(content.message);
+        if (message.type === 0) {
+            return null;
+        }
         let messageWrap = null;
         switch(message.type) {
         case 0:
@@ -33,7 +36,6 @@ class MessageItem extends React.Component{
             messageWrap = null;
             break;
         }
-
 
         if (content.messageType === 'receive') {
             return <li className="left-item chat-item">

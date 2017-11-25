@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Provider} from 'react-redux';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import Websocket from 'react-websocket';
 import store from './configureStore';
 import ErrorHandler from './component/main/ErrorHandler';
 import LoginDialog from './containers/login/LoginDialog';
@@ -12,6 +13,9 @@ import Setting from './page/setting/Setting';
 import './App.css';
 
 class App extends React.Component {
+    getMessage = value => {
+        console.log(value);
+    };
     render() {
         return (
             <div className="App">
@@ -20,6 +24,8 @@ class App extends React.Component {
                 <Wrap>
                     {this.props.children}
                 </Wrap>
+                <Websocket onMessage={this.getMessage} url={'ws://localhost:4000/fetchMessage'}>
+                </Websocket>
             </div>
         );
     }
