@@ -6,6 +6,7 @@ import {Popconfirm} from 'antd';
 import {getUserInfo} from '../../tools/index';
 import {chatListStart} from '../../actions/chatList';
 import {startChat} from '../../actions/chat';
+import {deleteChat} from '../../actions/deleteChat';
 import './chatList.css';
 
 class ChatList extends React.Component {
@@ -13,14 +14,15 @@ class ChatList extends React.Component {
         super(props);
         const {id} = getUserInfo();
         this.id = id;
+        this.currentSender = 0;
         this.state = {
             defaultIndex: 0
         };
         this.props.chatListStart({id: this.id});
-
     }
 
-    chooseChat = (index, item) => {
+    chooseChat = (index, item, event) => {
+        event.stopPropagation();
         this.setState({
             defaultIndex: index
         });
@@ -31,30 +33,44 @@ class ChatList extends React.Component {
 
     };
 
-    rightKeyClick = (index, item) => {
+    rightKeyClick = (event) => {
+        event.preventDefault();
+        event.currentTarget.click();
+    };
 
+    bindCurrentSender = (item) => {
+        this.currentSender = item.sender;
+    };
+
+    deleteChat = () => {
+        this.props.deleteChat({
+            id: this.id,
+            sender: this.currentSender
+        });
     };
 
     render() {
         let {chatListState, data: data = []} = this.props.chatList;
-        return <ul className='chat-list'>
-            {chatListState === 'success' &&
+        return <Popconfirm  trigger='click' title='确认删除该聊天?' placement='top'
+            onConfirm={this.deleteChat}>
+            <ul className='chat-list'
+                onContextMenu={this.rightKeyClick.bind(this)}>
+                {chatListState === 'success' &&
                 data.map((item, index) => {
-                    return <li key={item.sender}
+                    return<li key={item.sender}
                         onClick={this.chooseChat.bind(this, index, item)}
-                        onContextMenu={this.rightKeyClick.bind(this, index, item)}
+                        onContextMenu={this.bindCurrentSender.bind(this, item)}
                         className={this.state.defaultIndex === index ?
                             'list-item active-list-item' : 'list-item'}>
-                        <Popconfirm title={'确定要删除该聊天吗?'} onConfirm={this.}>
-                            <ChatListItem {...item}/>
-                        </Popconfirm>
+                        <ChatListItem {...item}/>
                     </li>;
                 })
-            }
-        </ul>;
+                }
+            </ul>
+        </Popconfirm>;
     }
 }
 
 const ChatListWrap = NavList(ChatList);
 
-export default connect(({chatList}) => ({chatList}), {chatListStart, startChat})(ChatListWrap);
+export default connect(({chatList}) => ({chatList}), {chatListStart, startChat, deleteChat})(ChatListWrap);
