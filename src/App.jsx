@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Provider} from 'react-redux';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
-import Websocket from 'react-websocket';
+import PropTypes from 'prop-types';
 import store from './configureStore';
 import ErrorHandler from './component/main/ErrorHandler';
 import LoginDialog from './containers/login/LoginDialog';
@@ -10,12 +10,31 @@ import Wrap from './page/main/Wrap';
 import Chat from './page/chat/Chat';
 import Friend from './page/friend/Friend';
 import Setting from './page/setting/Setting';
+import Notification from './containers/main/Notification';
 import './App.css';
 
 class App extends React.Component {
-    getMessage = value => {
-        console.log(value);
+    constructor(props) {
+        super(props);
+        this.state = {
+            isEnablePushMessage: false,
+            pushMessage: 'hello world',
+            avatar: ''
+        };
+        this.Notification = window.Notification;
+    }
+    static childContextTypes = {
+        isEnablePushMessage: PropTypes.bool,
+        pushMessage: PropTypes.string,
+        avatar: PropTypes.string
     };
+    getChildContext() {
+        return {
+            isEnablePushMessage: this.state.isEnablePushMessage,
+            pushMessage: this.state.pushMessage,
+            avatar: this.state.avatar
+        };
+    }
     render() {
         return (
             <div className="App">
@@ -24,10 +43,25 @@ class App extends React.Component {
                 <Wrap>
                     {this.props.children}
                 </Wrap>
-                <Websocket onMessage={this.getMessage} url={'ws://localhost:4000/fetchMessage'}>
-                </Websocket>
+                <Notification/>
             </div>
         );
+    }
+    componentDidMount() {
+        if (this.Notification.permission !== 'granted') {
+            this.Notification.requestPermission()
+                .then(value => {
+                    if (value === 'granted') {
+                        this.setState({
+                            isEnablePushMessage: true
+                        });
+                    }
+                });
+        } else {
+            this.setState({
+                isEnablePushMessage: false
+            });
+        }
     }
 }
 
