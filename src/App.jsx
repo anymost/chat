@@ -48,7 +48,11 @@ class App extends React.Component {
         );
     }
     componentDidMount() {
-        if (this.Notification.permission !== 'granted') {
+        if (this.Notification.permission === 'granted') {
+            this.setState({
+                isEnablePushMessage: false
+            });
+        } else if (this.Notification.permission === 'default') {
             this.Notification.requestPermission()
                 .then(value => {
                     if (value === 'granted') {
@@ -57,10 +61,6 @@ class App extends React.Component {
                         });
                     }
                 });
-        } else {
-            this.setState({
-                isEnablePushMessage: false
-            });
         }
     }
 }
