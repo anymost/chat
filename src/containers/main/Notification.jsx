@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {notification} from 'antd';
+import './notification.css';
 
 class Notification extends React.Component {
     static contextTypes= {
@@ -8,8 +8,23 @@ class Notification extends React.Component {
         pushMessage: PropTypes.string,
         avatar: PropTypes.string
     };
+    splitMessage() {
+        if (this.context.pushMessage) {
+            if (this.context.pushMessage.length > 20) {
+                return this.context.pushMessage.slice(0, 20);
+            }
+            return this.context.pushMessage;
+        }
+        return '';
+    }
     render() {
-        return <div/>;
+        return <div ref='wrap' className='wrap'>
+            <img src={this.context.avatar}/>
+            <p>{this.splitMessage()}</p>
+        </div>;
+    }
+    componentDidMount(){
+        this.refs.wrap.classList.add('move-wrap');
     }
     componentDidUpdate () {
         this.Notification = window.Notification;
@@ -19,12 +34,6 @@ class Notification extends React.Component {
                 icon: this.context.avatar,
                 requireInteraction: true
             });
-        } else {
-            notification.success({
-                message: '您收到了新的消息',
-                description: this.context.pushMessage
-            });
-
         }
     }
 }

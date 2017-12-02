@@ -19,7 +19,7 @@ class App extends React.Component {
         this.state = {
             isEnablePushMessage: false,
             pushMessage: 'hello world',
-            avatar: ''
+            avatar: '//localhost:4000/avatar/eruglu815638.jpg'
         };
         this.Notification = window.Notification;
     }
