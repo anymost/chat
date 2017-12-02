@@ -21,6 +21,15 @@
     margin: 5px;
 }
 
+.wrap i{
+    display: inline-block;
+    float: right;
+    font-size: 18px;
+    margin-top: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
 @keyframes move{
     from {
         right: -200px;
