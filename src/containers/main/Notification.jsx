@@ -17,24 +17,34 @@ class Notification extends React.Component {
         }
         return '';
     }
+    handleMove() {
+        if (!this.context.isEnablePushMessage) {
+            this.refs.wrap.classList.add('move-wrap');
+        }
+    }
     render() {
-        return <div ref='wrap' className='wrap'>
-            <img src={this.context.avatar}/>
-            <p>{this.splitMessage()}</p>
-        </div>;
+        if (!this.context.isEnablePushMessage) {
+            return <div ref='wrap' className='wrap'>
+                <img src={this.context.avatar}/>
+                <p>{this.splitMessage()}</p>
+            </div>;
+        }
+        return <div/>;
     }
     componentDidMount(){
-        this.refs.wrap.classList.add('move-wrap');
+        this.handleMove();
     }
+
     componentDidUpdate () {
         this.Notification = window.Notification;
         if (this.context.isEnablePushMessage) {
             this.content = new this.Notification('您收到了新的消息', {
-                body: this.context.pushMessage,
+                body: this.splitMessage(),
                 icon: this.context.avatar,
                 requireInteraction: true
             });
         }
+        this.handleMove();
     }
 }
 
