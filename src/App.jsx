@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Provider} from 'react-redux';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import io from 'socket.io-client';
 import PropTypes from 'prop-types';
 import store from './configureStore';
 import ErrorHandler from './component/main/ErrorHandler';
@@ -35,6 +36,9 @@ class App extends React.Component {
             avatar: this.state.avatar
         };
     }
+    handleData = (value) => {
+        console.log(value);
+    };
     render() {
         return (
             <div className="App">
@@ -48,6 +52,8 @@ class App extends React.Component {
         );
     }
     componentDidMount() {
+        const socket = io('//localhost:4000');
+        socket.emit('ws', 'hello world');
         if (this.Notification.permission === 'granted') {
             this.setState({
                 isEnablePushMessage: false
