@@ -12,6 +12,7 @@ import Chat from './page/chat/Chat';
 import Friend from './page/friend/Friend';
 import Setting from './page/setting/Setting';
 import Notification from './containers/main/Notification';
+import {getUserInfo} from './tools';
 import './App.css';
 
 class App extends React.Component {
@@ -23,22 +24,23 @@ class App extends React.Component {
             avatar: '//localhost:4000/avatar/eruglu815638.jpg'
         };
         this.Notification = window.Notification;
+        this.socket = io('//localhost:4000');
     }
     static childContextTypes = {
         isEnablePushMessage: PropTypes.bool,
         pushMessage: PropTypes.string,
-        avatar: PropTypes.string
+        avatar: PropTypes.string,
+        socket: PropTypes.object
     };
     getChildContext() {
         return {
             isEnablePushMessage: this.state.isEnablePushMessage,
             pushMessage: this.state.pushMessage,
-            avatar: this.state.avatar
+            avatar: this.state.avatar,
+            socket: this.socket
         };
     }
-    handleData = (value) => {
-        console.log(value);
-    };
+
     render() {
         return (
             <div className="App">
@@ -52,8 +54,11 @@ class App extends React.Component {
         );
     }
     componentDidMount() {
-        const socket = io('//localhost:4000');
-        socket.emit('ws', 'hello world');
+        this.timer = setInterval(() => {
+            this.socket.emit('ws', {
+                id: getUserInfo().id
+            });
+        }, 1000 * 30);
         if (this.Notification.permission === 'granted') {
             this.setState({
                 isEnablePushMessage: false
@@ -67,6 +72,11 @@ class App extends React.Component {
                         });
                     }
                 });
+        }
+    }
+    componentWillUnmount() {
+        if (this.timer) {
+            clearInterval(this.timer);
         }
     }
 }
