@@ -61,7 +61,7 @@ class App extends React.Component {
         }, 1000 * 30);
         if (this.Notification.permission === 'granted') {
             this.setState({
-                isEnablePushMessage: false
+                isEnablePushMessage: true
             });
         } else if (this.Notification.permission === 'default') {
             this.Notification.requestPermission()
